@@ -1,0 +1,1435 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="RS Sehat Medika – Rumah Sakit Terpercaya dengan Pelayanan Medis Terbaik, Dokter Spesialis Berpengalaman, dan Fasilitas Modern untuk Kesehatan Anda." />
+  <meta name="keywords" content="rumah sakit, kesehatan, dokter spesialis, rawat inap, rawat jalan, IGD, laboratorium, radiologi" />
+  <meta name="author" content="RS Sehat Medika" />
+  <meta property="og:title" content="RS Sehat Medika – Kesehatan Terbaik untuk Keluarga Anda" />
+  <meta property="og:description" content="Layanan kesehatan profesional dengan teknologi terkini dan tenaga medis berpengalaman." />
+  <meta property="og:type" content="website" />
+  <title>RS Sehat Medika – Kesehatan Terbaik untuk Keluarga Anda</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230b4f8a'/><path d='M42 25h16v17h17v16H58v17H42V58H25V42h17z' fill='white'/></svg>" />
+</head>
+<body>
+
+<!-- ============================================================
+     Loading Screen
+============================================================ -->
+<div id="loading-screen">
+  <div class="loader">
+    <div class="loader-icon">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10.5 3h3v4.5H18v3h-4.5V15h-3v-4.5H6v-3h4.5V3z"/>
+      </svg>
+    </div>
+    <div class="loader-text">RS SEHAT MEDIKA</div>
+    <div class="loader-bar"></div>
+  </div>
+</div>
+
+<!-- ============================================================
+     Navbar
+============================================================ -->
+<nav id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <!-- Logo -->
+      <a href="#hero" class="nav-logo">
+        <div class="nav-logo-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10.5 3h3v4.5H18v3h-4.5V15h-3v-4.5H6v-3h4.5V3z"/>
+          </svg>
+        </div>
+        <div class="nav-logo-text">
+          <span class="nav-logo-name">RS Sehat Medika</span>
+          <span class="nav-logo-tagline">Kesehatan Terbaik untuk Anda</span>
+        </div>
+      </a>
+
+      <!-- Desktop Links -->
+      <ul class="nav-links">
+        <li><a href="#about" class="nav-link">Tentang</a></li>
+        <li><a href="#services" class="nav-link">Layanan</a></li>
+        <li><a href="#doctors" class="nav-link">Dokter</a></li>
+        <li><a href="#facilities" class="nav-link">Fasilitas</a></li>
+        <li><a href="#news" class="nav-link">Berita</a></li>
+        <li><a href="#contact" class="nav-link">Kontak</a></li>
+      </ul>
+
+      <!-- CTA -->
+      <a href="#appointment" class="btn btn-accent nav-cta">
+        <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:white">
+          <path d="M8 2v2H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-2V2h-2v2h-4V2H8zm-2 6h12v10H6V8zm5 2v3H8v2h3v3h2v-3h3v-2h-3v-3h-2z"/>
+        </svg>
+        Buat Janji
+      </a>
+
+      <!-- Hamburger -->
+      <button class="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+      <ul>
+        <li><a href="#about" class="nav-link">Tentang Kami</a></li>
+        <li><a href="#services" class="nav-link">Layanan Medis</a></li>
+        <li><a href="#doctors" class="nav-link">Tim Dokter</a></li>
+        <li><a href="#facilities" class="nav-link">Fasilitas</a></li>
+        <li><a href="#news" class="nav-link">Berita & Info</a></li>
+        <li><a href="#contact" class="nav-link">Hubungi Kami</a></li>
+      </ul>
+      <a href="#appointment" class="btn btn-primary">
+        <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:white">
+          <path d="M8 2v2H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-2V2h-2v2h-4V2H8zm-2 6h12v10H6V8zm5 2v3H8v2h3v3h2v-3h3v-2h-3v-3h-2z"/>
+        </svg>
+        Buat Janji Temu
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================================================
+     Hero Section
+============================================================ -->
+<section id="hero">
+  <!-- Background -->
+  <div class="hero-bg">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-bg-circle"></div>
+    <div class="hero-bg-circle"></div>
+    <div class="hero-bg-circle"></div>
+    <canvas id="hero-canvas" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.5;pointer-events:none;"></canvas>
+  </div>
+
+  <div class="container">
+    <div class="hero-inner">
+      <!-- Content -->
+      <div class="hero-content">
+        <div class="hero-badge">
+          <div class="hero-badge-dot"></div>
+          Layanan Kesehatan 24/7
+        </div>
+
+        <h1 class="hero-title">
+          Rumah Sakit<br>
+          <span class="highlight" id="hero-typing">Terpercaya</span><br>
+          untuk Keluarga Anda
+        </h1>
+
+        <p class="hero-desc">
+          Kami hadir dengan teknologi medis terkini, dokter spesialis berpengalaman, 
+          dan layanan kesehatan komprehensif untuk menjaga kesehatan Anda dan keluarga.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#appointment" class="btn btn-accent">
+            <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:white">
+              <path d="M8 2v2H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-2V2h-2v2h-4V2H8zm-2 6h12v10H6V8zm5 2v3H8v2h3v3h2v-3h3v-2h-3v-3h-2z"/>
+            </svg>
+            Buat Janji Sekarang
+          </a>
+          <a href="#services" class="btn btn-white">
+            <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>
+            </svg>
+            Lihat Layanan
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="hero-stat-num"><span data-counter data-target="15000">0</span><span>+</span></div>
+            <div class="hero-stat-label">Pasien Terlayani</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num"><span data-counter data-target="85">0</span><span>+</span></div>
+            <div class="hero-stat-label">Dokter Spesialis</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num"><span data-counter data-target="20">0</span><span>+</span></div>
+            <div class="hero-stat-label">Tahun Berpengalaman</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Visual Card -->
+      <div class="hero-visual">
+        <div class="hero-card-main">
+          <div class="hero-card-header">
+            <div class="hero-card-avatar">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8V21h19.2v-1.8c0-3.2-6.4-4.8-9.6-4.8z"/>
+              </svg>
+            </div>
+            <div class="hero-card-info">
+              <h3>Dashboard Pasien</h3>
+              <p>Manajemen Kesehatan Digital</p>
+            </div>
+            <div class="hero-card-status">
+              <div class="status-dot"></div>
+              Online
+            </div>
+          </div>
+
+          <div class="hero-card-list">
+            <div class="hero-card-item">
+              <div class="hero-card-item-icon" style="background:rgba(11,79,138,0.1)">
+                <svg viewBox="0 0 24 24" style="fill:var(--primary)">
+                  <path d="M8 2v2H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-2V2h-2v2h-4V2H8zm3 7v3H8v2h3v3h2v-3h3v-2h-3V9h-2z"/>
+                </svg>
+              </div>
+              <div class="hero-card-item-text">
+                <span>Janji Temu</span>
+                <strong>Dr. Siti Rahayu – Jantung</strong>
+              </div>
+              <div class="hero-card-item-badge badge-success">Hari Ini</div>
+            </div>
+
+            <div class="hero-card-item">
+              <div class="hero-card-item-icon" style="background:rgba(0,168,107,0.1)">
+                <svg viewBox="0 0 24 24" style="fill:var(--secondary)">
+                  <path d="M19 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+                </svg>
+              </div>
+              <div class="hero-card-item-text">
+                <span>Hasil Laboratorium</span>
+                <strong>Pemeriksaan Darah Lengkap</strong>
+              </div>
+              <div class="hero-card-item-badge badge-info">Siap</div>
+            </div>
+
+            <div class="hero-card-item">
+              <div class="hero-card-item-icon" style="background:rgba(249,115,22,0.1)">
+                <svg viewBox="0 0 24 24" style="fill:var(--accent)">
+                  <path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm-1 14.5v-9l6 4.5-6 4.5z"/>
+                </svg>
+              </div>
+              <div class="hero-card-item-text">
+                <span>Konsultasi Online</span>
+                <strong>Dr. Ahmad Fauzi – Umum</strong>
+              </div>
+              <div class="hero-card-item-badge badge-warning">15 mnt</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating Cards -->
+        <div class="hero-floating-card hero-floating-1">
+          <div class="hero-floating-icon float-icon-green">
+            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <div class="hero-floating-data">
+            <strong>98.6%</strong>
+            <span>Tingkat Kepuasan</span>
+          </div>
+        </div>
+
+        <div class="hero-floating-card hero-floating-2">
+          <div class="hero-floating-icon float-icon-blue">
+            <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm1 14.5h-2v-2h2v2zm0-4h-2V7h2v5.5z"/></svg>
+          </div>
+          <div class="hero-floating-data">
+            <strong>24/7</strong>
+            <span>IGD Aktif</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     Quick Access Bar
+============================================================ -->
+<div id="quick-access">
+  <div class="container">
+    <div class="quick-access-grid">
+      <div class="quick-access-item" data-target="#appointment">
+        <div class="quick-access-icon qa-blue">
+          <svg viewBox="0 0 24 24">
+            <path d="M8 2v2H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-2V2h-2v2h-4V2H8zm3 7v3H8v2h3v3h2v-3h3v-2h-3V9h-2z"/>
+          </svg>
+        </div>
+        <div class="quick-access-text">
+          <h4>Buat Janji Temu</h4>
+          <p>Daftar konsultasi dokter</p>
+        </div>
+      </div>
+
+      <div class="quick-access-item" data-target="#doctors">
+        <div class="quick-access-icon qa-green">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8V21h19.2v-1.8c0-3.2-6.4-4.8-9.6-4.8z"/>
+          </svg>
+        </div>
+        <div class="quick-access-text">
+          <h4>Cari Dokter</h4>
+          <p>Temukan spesialis terbaik</p>
+        </div>
+      </div>
+
+      <div class="quick-access-item" data-target="#services">
+        <div class="quick-access-icon qa-orange">
+          <svg viewBox="0 0 24 24">
+            <path d="M19 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+          </svg>
+        </div>
+        <div class="quick-access-text">
+          <h4>Hasil Laboratorium</h4>
+          <p>Cek hasil pemeriksaan</p>
+        </div>
+      </div>
+
+      <div class="quick-access-item" data-target="#contact">
+        <div class="quick-access-icon qa-purple">
+          <svg viewBox="0 0 24 24">
+            <path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+          </svg>
+        </div>
+        <div class="quick-access-text">
+          <h4>Hubungi Kami</h4>
+          <p>Informasi & konsultasi</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     Stats Section
+============================================================ -->
+<section id="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item" data-aos="fade-up">
+        <div class="stat-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+          </svg>
+        </div>
+        <div class="stat-number" data-counter data-target="15000">0</div>
+        <div class="stat-label">Pasien per Tahun</div>
+      </div>
+
+      <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+        <div class="stat-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm-1 14.5v-9l6 4.5-6 4.5z"/>
+          </svg>
+        </div>
+        <div class="stat-number" data-counter data-target="85">0</div>
+        <div class="stat-label">Dokter Spesialis</div>
+      </div>
+
+      <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+        <div class="stat-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M10.5 3h3v4.5H18v3h-4.5V15h-3v-4.5H6v-3h4.5V3z"/>
+          </svg>
+        </div>
+        <div class="stat-number" data-counter data-target="25">0</div>
+        <div class="stat-label">Departemen Medis</div>
+      </div>
+
+      <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+        <div class="stat-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/>
+          </svg>
+        </div>
+        <div class="stat-number" data-counter data-target="20">0</div>
+        <div class="stat-label">Tahun Pengalaman</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     About Section
+============================================================ -->
+<section id="about" class="section-padding">
+  <div class="container">
+    <div class="about-inner">
+      <!-- Visual -->
+      <div class="about-visual" data-aos="fade-right">
+        <div class="about-img-main">
+          <div class="about-img-placeholder">
+            <div class="about-img-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M19 8h-2v3h-3v2h3v3h2v-3h3v-2h-3V8zM4 8a4 4 0 004 4 4 4 0 004-4 4 4 0 00-4-4 4 4 0 00-4 4zm4 6c-4.42 0-8 1.79-8 4v2h16v-2c0-2.21-3.58-4-8-4z"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Badge Cards -->
+        <div class="about-badge-card about-badge-card-1">
+          <div class="about-badge-icon bi-green">
+            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <div class="about-badge-info">
+            <strong>Akreditasi Paripurna</strong>
+            <span>Kemenkes RI 2024</span>
+          </div>
+        </div>
+
+        <div class="about-badge-card about-badge-card-2">
+          <div class="about-badge-icon bi-blue">
+            <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2z"/></svg>
+          </div>
+          <div class="about-badge-info">
+            <strong>Top Hospital 2024</strong>
+            <span>Penghargaan Nasional</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="about-content" data-aos="fade-left">
+        <div class="section-tag">
+          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+          Tentang Kami
+        </div>
+        <h2 class="section-title">
+          Lebih dari 20 Tahun<br>
+          <span>Melayani dengan Sepenuh Hati</span>
+        </h2>
+        <p class="section-desc">
+          RS Sehat Medika berdiri sejak tahun 2004, berkomitmen memberikan pelayanan kesehatan 
+          berkualitas tinggi dengan standar internasional. Dipercaya oleh ribuan keluarga Indonesia, 
+          kami terus berinovasi untuk menjadi mitra kesehatan terbaik Anda.
+        </p>
+
+        <div class="about-features">
+          <div class="about-feature" data-aos="fade-up" data-aos-delay="100">
+            <div class="about-feature-icon">
+              <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <div class="about-feature-text">
+              <h4>Teknologi Medis Terkini</h4>
+              <p>Peralatan diagnostik dan terapi modern dengan standar internasional terbaru.</p>
+            </div>
+          </div>
+
+          <div class="about-feature" data-aos="fade-up" data-aos-delay="200">
+            <div class="about-feature-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8V21h19.2v-1.8c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+            </div>
+            <div class="about-feature-text">
+              <h4>Tim Dokter Profesional</h4>
+              <p>85+ dokter spesialis berpengalaman dengan sertifikasi nasional dan internasional.</p>
+            </div>
+          </div>
+
+          <div class="about-feature" data-aos="fade-up" data-aos-delay="300">
+            <div class="about-feature-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+            </div>
+            <div class="about-feature-text">
+              <h4>Keselamatan Pasien Prioritas</h4>
+              <p>Protokol keselamatan ketat memastikan setiap pasien mendapat perawatan aman.</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:32px; display:flex; gap:16px; flex-wrap:wrap;">
+          <a href="#services" class="btn btn-primary">
+            <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:white"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            Lihat Layanan
+          </a>
+          <a href="#contact" class="btn btn-secondary">Kontak Kami</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     Services Section
+============================================================ -->
+<section id="services" class="section-padding">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <div class="section-tag">
+        <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:currentColor"><path d="M10.5 3h3v4.5H18v3h-4.5V15h-3v-4.5H6v-3h4.5V3z"/></svg>
+        Layanan Kami
+      </div>
+      <h2 class="section-title">Layanan Medis <span>Komprehensif</span></h2>
+      <p class="section-desc">
+        Kami menyediakan berbagai layanan medis unggulan dengan tenaga profesional 
+        dan peralatan modern untuk memenuhi kebutuhan kesehatan Anda secara menyeluruh.
+      </p>
+    </div>
+
+    <div class="services-grid">
+      <!-- Service 1 -->
+      <div class="service-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="service-icon si-red">
+          <svg viewBox="0 0 24 24"><path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z"/></svg>
+        </div>
+        <h3>Kardiologi</h3>
+        <p>Layanan spesialis jantung dengan teknologi ekokardiografi terkini, kateterisasi jantung, dan program rehabilitasi kardiovaskular komprehensif.</p>
+        <a href="#appointment" class="service-link">
+          Buat Janji
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <!-- Service 2 -->
+      <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-icon si-blue">
+          <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm0 3c1.66 0 3 1.34 3 3S13.66 11 12 11 9 9.66 9 8s1.34-3 3-3zm0 14.2a7.2 7.2 0 01-6-3.22c.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08a7.2 7.2 0 01-6 3.22z"/></svg>
+        </div>
+        <h3>Neurologi</h3>
+        <p>Diagnosis dan pengobatan gangguan sistem saraf, stroke, epilepsi, Parkinson, dan penyakit neurologi lainnya dengan penanganan terkini.</p>
+        <a href="#appointment" class="service-link">
+          Buat Janji
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <!-- Service 3 -->
+      <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="service-icon si-green">
+          <svg viewBox="0 0 24 24"><path d="M19 8h-2v3h-3v2h3v3h2v-3h3v-2h-3V8zM4 8a4 4 0 004 4 4 4 0 004-4 4 4 0 00-4-4 4 4 0 00-4 4zm4 6c-4.42 0-8 1.79-8 4v2h16v-2c0-2.21-3.58-4-8-4z"/></svg>
+        </div>
+        <h3>Bedah Umum & Minimal Invasif</h3>
+        <p>Tindakan bedah dengan teknik laparoskopi dan robotik untuk hasil optimal, pemulihan lebih cepat, dan risiko komplikasi minimal.</p>
+        <a href="#appointment" class="service-link">
+          Buat Janji
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <!-- Service 4 -->
+      <div class="service-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="service-icon si-purple">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>
+        </div>
+        <h3>Onkologi</h3>
+        <p>Layanan kanker komprehensif mencakup kemoterapi, radioterapi, imunoterapi, dan tim multidisiplin untuk penatalaksanaan optimal.</p>
+        <a href="#appointment" class="service-link">
+          Buat Janji
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <!-- Service 5 -->
+      <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-icon si-orange">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>
+        </div>
+        <h3>Obstetri & Ginekologi</h3>
+        <p>Layanan kesehatan wanita lengkap mulai dari kehamilan, persalinan normal dan caesar, hingga perawatan pasca melahirkan yang komprehensif.</p>
+        <a href="#appointment" class="service-link">
+          Buat Janji
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <!-- Service 6 -->
+      <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="service-icon si-teal">
+          <svg viewBox="0 0 24 24"><path d="M19 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/></svg>
+        </div>
+        <h3>Radiologi & Pencitraan</h3>
+        <p>Pemeriksaan MRI 3 Tesla, CT Scan 128-slice, USG 4D, mamografi digital, dan berbagai modalitas pencitraan medis canggih lainnya.</p>
+        <a href="#appointment" class="service-link">
+          Buat Janji
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="text-center" style="margin-top:48px;" data-aos="fade-up">
+      <a href="#appointment" class="btn btn-primary">
+        <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:white"><path d="M8 2v2H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-2V2h-2v2h-4V2H8zm3 7v3H8v2h3v3h2v-3h3v-2h-3V9h-2z"/></svg>
+        Daftar & Buat Janji Sekarang
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     Doctors Section
+============================================================ -->
+<section id="doctors" class="section-padding">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <div class="section-tag">
+        <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:currentColor"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8V21h19.2v-1.8c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+        Tim Medis
+      </div>
+      <h2 class="section-title">Dokter <span>Spesialis</span> Berpengalaman</h2>
+      <p class="section-desc">
+        Didukung oleh lebih dari 85 dokter spesialis dengan pengalaman dan keahlian di bidangnya, 
+        siap memberikan penanganan medis terbaik untuk Anda.
+      </p>
+    </div>
+
+    <div class="doctors-grid">
+      <!-- Doctor 1 -->
+      <div class="doctor-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="doctor-img">
+          <div class="doctor-img-avatar">
+            <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8V21h19.2v-1.8c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+          </div>
+          <div class="doctor-badge">● Tersedia Hari Ini</div>
+        </div>
+        <div class="doctor-info">
+          <h3>Dr. Siti Rahayu, Sp.JP</h3>
+          <div class="doctor-specialty">Kardiologi & Jantung</div>
+          <div class="doctor-meta">
+            <div class="doctor-meta-item">
+              <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
+              15 Thn Pengalaman
+            </div>
+          </div>
+          <div class="doctor-socials">
+            <a href="#" class="doctor-social" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z M4 6a2 2 0 100-4 2 2 0 000 4z"/></svg>
+            </a>
+            <a href="#" class="doctor-social" aria-label="Email">
+              <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Doctor 2 -->
+      <div class="doctor-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="doctor-img doctor-img-2">
+          <div class="doctor-img-avatar">
+            <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8V21h19.2v-1.8c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+          </div>
+          <div class="doctor-badge">● Tersedia</div>
+        </div>
+        <div class="doctor-info">
+          <h3>Dr. Ahmad Fauzi, Sp.BS</h3>
+          <div class="doctor-specialty">Bedah Saraf (Neurologi)</div>
+          <div class="doctor-meta">
+            <div class="doctor-meta-item">
+              <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
+              12 Thn Pengalaman
+            </div>
+          </div>
+          <div class="doctor-socials">
+            <a href="#" class="doctor-social" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z M4 6a2 2 0 100-4 2 2 0 000 4z"/></svg>
+            </a>
+            <a href="#" class="doctor-social" aria-label="Email">
+              <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Doctor 3 -->
+      <div class="doctor-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="doctor-img doctor-img-3">
+          <div class="doctor-img-avatar">
+            <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8V21h19.2v-1.8c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+          </div>
+          <div class="doctor-badge">● Jadwal Penuh</div>
+        </div>
+        <div class="doctor-info">
+          <h3>Dr. Dewi Kusuma, Sp.OG</h3>
+          <div class="doctor-specialty">Obstetri & Ginekologi</div>
+          <div class="doctor-meta">
+            <div class="doctor-meta-item">
+              <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
+              18 Thn Pengalaman
+            </div>
+          </div>
+          <div class="doctor-socials">
+            <a href="#" class="doctor-social" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z M4 6a2 2 0 100-4 2 2 0 000 4z"/></svg>
+            </a>
+            <a href="#" class="doctor-social" aria-label="Email">
+              <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Doctor 4 -->
+      <div class="doctor-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="doctor-img doctor-img-4">
+          <div class="doctor-img-avatar">
+            <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8V21h19.2v-1.8c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+          </div>
+          <div class="doctor-badge">● Tersedia</div>
+        </div>
+        <div class="doctor-info">
+          <h3>Dr. Rizal Maulana, Sp.PD</h3>
+          <div class="doctor-specialty">Penyakit Dalam (Internist)</div>
+          <div class="doctor-meta">
+            <div class="doctor-meta-item">
+              <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
+              10 Thn Pengalaman
+            </div>
+          </div>
+          <div class="doctor-socials">
+            <a href="#" class="doctor-social" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z M4 6a2 2 0 100-4 2 2 0 000 4z"/></svg>
+            </a>
+            <a href="#" class="doctor-social" aria-label="Email">
+              <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center" style="margin-top:48px;" data-aos="fade-up">
+      <a href="#appointment" class="btn btn-secondary">
+        <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:currentColor"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+        Lihat Semua Dokter
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     Appointment Section
+============================================================ -->
+<section id="appointment" class="section-padding">
+  <div class="container">
+    <div class="appointment-inner">
+      <!-- Info -->
+      <div class="appointment-info" data-aos="fade-right">
+        <div class="section-tag">
+          <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:currentColor"><path d="M8 2v2H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-2V2h-2v2h-4V2H8zm3 7v3H8v2h3v3h2v-3h3v-2h-3V9h-2z"/></svg>
+          Janji Temu
+        </div>
+        <h2 class="section-title text-white">
+          Jadwalkan Konsultasi<br>
+          <span style="color:var(--secondary-light)">dengan Dokter Kami</span>
+        </h2>
+        <p class="section-desc" style="color:rgba(255,255,255,0.75)">
+          Proses pendaftaran mudah dan cepat. Pilih dokter, tentukan jadwal, 
+          dan konfirmasi janji temu Anda dalam hitungan menit.
+        </p>
+
+        <div class="appointment-features">
+          <div class="apt-feature">
+            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            Konfirmasi instan via WhatsApp & Email
+          </div>
+          <div class="apt-feature">
+            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            Pilih dokter & jadwal yang tersedia
+          </div>
+          <div class="apt-feature">
+            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            Pengingat otomatis 1 hari sebelumnya
+          </div>
+          <div class="apt-feature">
+            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            Tersedia konsultasi online & tatap muka
+          </div>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="appointment-form" data-aos="fade-left">
+        <h3>
+          <svg viewBox="0 0 24 24" style="width:22px;height:22px;fill:var(--primary);vertical-align:middle;margin-right:8px"><path d="M8 2v2H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-2V2h-2v2h-4V2H8zm3 7v3H8v2h3v3h2v-3h3v-2h-3V9h-2z"/></svg>
+          Formulir Pendaftaran
+        </h3>
+
+        <form id="appointment-form" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Nama Lengkap <span>*</span></label>
+              <input type="text" class="form-control" placeholder="Masukkan nama lengkap" required />
+            </div>
+            <div class="form-group">
+              <label>No. Handphone <span>*</span></label>
+              <input type="tel" class="form-control" placeholder="08xxxxxxxxxx" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" class="form-control" placeholder="email@contoh.com" />
+            </div>
+            <div class="form-group">
+              <label>Tanggal Lahir</label>
+              <input type="date" class="form-control" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Departemen / Spesialis <span>*</span></label>
+              <select class="form-control" required>
+                <option value="" disabled selected>Pilih departemen</option>
+                <option>Kardiologi (Jantung)</option>
+                <option>Neurologi (Saraf)</option>
+                <option>Bedah Umum</option>
+                <option>Onkologi (Kanker)</option>
+                <option>Obstetri & Ginekologi</option>
+                <option>Radiologi</option>
+                <option>Penyakit Dalam</option>
+                <option>Anak (Pediatri)</option>
+                <option>Ortopedi</option>
+                <option>THT</option>
+                <option>Mata (Oftalmologi)</option>
+                <option>Kulit & Kelamin</option>
+                <option>Psikiatri</option>
+                <option>Dokter Umum / IGD</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Tanggal Kunjungan <span>*</span></label>
+              <input type="date" class="form-control" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Jenis Konsultasi</label>
+              <select class="form-control">
+                <option>Rawat Jalan</option>
+                <option>Konsultasi Online</option>
+                <option>IGD</option>
+                <option>Medical Check-Up</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Waktu Preferensi</label>
+              <select class="form-control">
+                <option>Pagi (08:00–12:00)</option>
+                <option>Siang (12:00–15:00)</option>
+                <option>Sore (15:00–17:00)</option>
+                <option>Malam (17:00–20:00)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Keluhan / Catatan</label>
+            <textarea class="form-control" placeholder="Ceritakan keluhan atau gejala yang Anda alami..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary form-submit">
+            <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:white"><path d="M8 2v2H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-2V2h-2v2h-4V2H8zm3 7v3H8v2h3v3h2v-3h3v-2h-3V9h-2z"/></svg>
+            Konfirmasi Janji Temu
+          </button>
+        </form>
+
+        <div id="form-success" class="form-success">
+          <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <h4>Janji Temu Berhasil Dibuat!</h4>
+          <p>Konfirmasi telah dikirim ke WhatsApp & email Anda. Tim kami akan menghubungi Anda segera.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     Testimonials Section
+============================================================ -->
+<section id="testimonials" class="section-padding">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <div class="section-tag">
+        <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2z"/></svg>
+        Testimoni Pasien
+      </div>
+      <h2 class="section-title">Kata Mereka <span>Tentang Kami</span></h2>
+      <p class="section-desc">
+        Kepuasan dan kesehatan pasien adalah prioritas utama kami. 
+        Ini yang mereka rasakan setelah mendapat layanan di RS Sehat Medika.
+      </p>
+    </div>
+
+    <div class="testimonials-slider" data-aos="fade-up">
+      <div class="testimonials-track">
+        <!-- Testimonial 1 -->
+        <div class="testimonial-card">
+          <div class="testimonial-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2z"/></svg>
+          </div>
+          <p class="testimonial-text">
+            Pelayanan di RS Sehat Medika sangat luar biasa. Dokter dan perawatnya ramah, 
+            penjelasan penyakitnya jelas dan mudah dipahami. Fasilitas juga sangat bersih dan modern. 
+            Saya merasa sangat nyaman selama perawatan.
+          </p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">BS</div>
+            <div class="testimonial-author-info">
+              <strong>Budi Santoso</strong>
+              <span>Pasien Kardiologi – Jakarta</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="testimonial-card">
+          <div class="testimonial-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2z"/></svg>
+          </div>
+          <p class="testimonial-text">
+            Proses persalinan saya berjalan lancar berkat dr. Dewi dan tim bidan yang sangat profesional. 
+            Mereka sabar dan selalu memberikan dukungan emosional. Kamar bersalinnya pun sangat nyaman. 
+            Terima kasih RS Sehat Medika!
+          </p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" style="background:linear-gradient(135deg,var(--secondary),#006b44)">AN</div>
+            <div class="testimonial-author-info">
+              <strong>Ani Nugraha</strong>
+              <span>Pasien Kebidanan – Bandung</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="testimonial-card">
+          <div class="testimonial-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2z"/></svg>
+          </div>
+          <p class="testimonial-text">
+            Sistem booking online sangat praktis. Tinggal pilih dokter dan jadwal, langsung dikonfirmasi. 
+            Dokter neurologinya sangat teliti dalam mendiagnosis. Alhamdulillah kondisi saya sudah membaik 
+            setelah menjalani terapi di sini.
+          </p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" style="background:linear-gradient(135deg,#7c3aed,#4c1d95)">RH</div>
+            <div class="testimonial-author-info">
+              <strong>Rudi Hermawan</strong>
+              <span>Pasien Neurologi – Surabaya</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 4 -->
+        <div class="testimonial-card">
+          <div class="testimonial-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2z"/></svg>
+          </div>
+          <p class="testimonial-text">
+            MCU (Medical Check-Up) di sini sangat lengkap dan hasilnya cepat keluar. 
+            Staff laboratorium sangat ramah dan profesional. Laporan kesehatan dibuat detail 
+            dengan penjelasan yang mudah dimengerti. Sangat rekomendasikan!
+          </p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" style="background:linear-gradient(135deg,#0891b2,#0e4f63)">SW</div>
+            <div class="testimonial-author-info">
+              <strong>Sari Widya</strong>
+              <span>Pasien MCU – Yogyakarta</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 5 -->
+        <div class="testimonial-card">
+          <div class="testimonial-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2z"/></svg>
+          </div>
+          <p class="testimonial-text">
+            Fasilitas ICU dan HCU sangat canggih. Saat kondisi kritis, tim medis bekerja cepat dan terkoordinasi dengan baik. 
+            Layanan 24 jam betul-betul bisa diandalkan. Dokter selalu update perkembangan kondisi pasien kepada keluarga.
+          </p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" style="background:linear-gradient(135deg,#d97706,#78350f)">TP</div>
+            <div class="testimonial-author-info">
+              <strong>Teguh Prasetyo</strong>
+              <span>Keluarga Pasien ICU – Semarang</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-nav" data-aos="fade-up">
+      <button class="testimonial-btn testimonial-prev" aria-label="Sebelumnya">
+        <svg viewBox="0 0 24 24"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z"/></svg>
+      </button>
+      <div class="testimonial-dots">
+        <div class="testimonial-dot active"></div>
+        <div class="testimonial-dot"></div>
+        <div class="testimonial-dot"></div>
+      </div>
+      <button class="testimonial-btn testimonial-next" aria-label="Berikutnya">
+        <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     Facilities Section
+============================================================ -->
+<section id="facilities" class="section-padding">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <div class="section-tag">
+        <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+        Fasilitas
+      </div>
+      <h2 class="section-title">Fasilitas <span>Modern & Lengkap</span></h2>
+      <p class="section-desc">
+        Didukung fasilitas medis berstandar internasional, dari ruang rawat hingga 
+        laboratorium canggih, untuk kenyamanan dan kesembuhan optimal Anda.
+      </p>
+    </div>
+
+    <div class="facilities-grid">
+      <div class="facility-card" data-aos="zoom-in" data-aos-delay="0">
+        <div class="facility-img facility-color-1">
+          <div class="facility-icon">
+            <svg viewBox="0 0 24 24"><path d="M19 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/></svg>
+          </div>
+        </div>
+        <div class="facility-overlay">
+          <div class="facility-info">
+            <h3>Laboratorium Modern</h3>
+            <p>Pemeriksaan lengkap dengan hasil cepat & akurat</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="facility-card" data-aos="zoom-in" data-aos-delay="100">
+        <div class="facility-img facility-color-2">
+          <div class="facility-icon">
+            <svg viewBox="0 0 24 24"><path d="M10.5 3h3v4.5H18v3h-4.5V15h-3v-4.5H6v-3h4.5V3z"/></svg>
+          </div>
+        </div>
+        <div class="facility-overlay">
+          <div class="facility-info">
+            <h3>Ruang Operasi CITO</h3>
+            <p>8 kamar operasi dengan teknologi terkini</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="facility-card" data-aos="zoom-in" data-aos-delay="200">
+        <div class="facility-img facility-color-3">
+          <div class="facility-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+          </div>
+        </div>
+        <div class="facility-overlay">
+          <div class="facility-info">
+            <h3>MRI & CT Scan 3 Tesla</h3>
+            <p>Pencitraan presisi tinggi untuk diagnosa akurat</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="facility-card" data-aos="zoom-in" data-aos-delay="0">
+        <div class="facility-img facility-color-4">
+          <div class="facility-icon">
+            <svg viewBox="0 0 24 24"><path d="M2 12C2 6.48 6.48 2 12 2s10 4.48 10 10-4.48 10-10 10S2 17.52 2 12zm4.5 0c0 3.04 2.46 5.5 5.5 5.5 3.04 0 5.5-2.46 5.5-5.5 0-3.04-2.46-5.5-5.5-5.5-3.04 0-5.5 2.46-5.5 5.5z"/></svg>
+          </div>
+        </div>
+        <div class="facility-overlay">
+          <div class="facility-info">
+            <h3>ICU & PICU Canggih</h3>
+            <p>Perawatan intensif 24/7 dengan monitoring real-time</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="facility-card" data-aos="zoom-in" data-aos-delay="100">
+        <div class="facility-img facility-color-5">
+          <div class="facility-icon">
+            <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+          </div>
+        </div>
+        <div class="facility-overlay">
+          <div class="facility-info">
+            <h3>Kamar VIP & Suite</h3>
+            <p>Kenyamanan bintang lima untuk pemulihan optimal</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="facility-card" data-aos="zoom-in" data-aos-delay="200">
+        <div class="facility-img facility-color-6">
+          <div class="facility-icon">
+            <svg viewBox="0 0 24 24"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19a2 2 0 002 2h14a2 2 0 002-2V5c0-1.1-.89-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>
+          </div>
+        </div>
+        <div class="facility-overlay">
+          <div class="facility-info">
+            <h3>Apotek 24 Jam</h3>
+            <p>Ketersediaan obat lengkap dengan harga terjangkau</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     News Section
+============================================================ -->
+<section id="news" class="section-padding">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <div class="section-tag">
+        <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:currentColor"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        Berita & Info
+      </div>
+      <h2 class="section-title">Berita & <span>Informasi Kesehatan</span></h2>
+      <p class="section-desc">
+        Tetap update dengan informasi kesehatan terbaru, tips hidup sehat, 
+        dan perkembangan layanan medis di RS Sehat Medika.
+      </p>
+    </div>
+
+    <div class="news-grid">
+      <!-- News 1 -->
+      <div class="news-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="news-img nc-1">
+          <div class="news-img-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z"/></svg>
+          </div>
+          <div class="news-cat">Kardiologi</div>
+        </div>
+        <div class="news-content">
+          <div class="news-meta">
+            <div class="news-date">
+              <svg viewBox="0 0 24 24"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19a2 2 0 002 2h14a2 2 0 002-2V5c0-1.1-.89-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>
+              28 Maret 2025
+            </div>
+          </div>
+          <h3>5 Tanda Peringatan Dini Penyakit Jantung yang Sering Diabaikan</h3>
+          <p>Kenali gejala-gejala penyakit jantung sejak dini. Deteksi awal bisa menyelamatkan nyawa. Pelajari tanda-tandanya bersama spesialis kami.</p>
+          <a href="#" class="news-read-more">
+            Baca Selengkapnya
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- News 2 -->
+      <div class="news-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="news-img nc-2">
+          <div class="news-img-icon">
+            <svg viewBox="0 0 24 24"><path d="M19 8h-2v3h-3v2h3v3h2v-3h3v-2h-3V8zM4 8a4 4 0 004 4 4 4 0 004-4 4 4 0 00-4-4 4 4 0 00-4 4zm4 6c-4.42 0-8 1.79-8 4v2h16v-2c0-2.21-3.58-4-8-4z"/></svg>
+          </div>
+          <div class="news-cat">Tips Kesehatan</div>
+        </div>
+        <div class="news-content">
+          <div class="news-meta">
+            <div class="news-date">
+              <svg viewBox="0 0 24 24"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19a2 2 0 002 2h14a2 2 0 002-2V5c0-1.1-.89-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>
+              22 Maret 2025
+            </div>
+          </div>
+          <h3>Pentingnya Medical Check-Up Rutin: Jadwal Ideal Berdasarkan Usia</h3>
+          <p>MCU bukan hanya untuk orang sakit. Pemeriksaan rutin membantu mendeteksi risiko kesehatan sebelum berkembang menjadi penyakit serius.</p>
+          <a href="#" class="news-read-more">
+            Baca Selengkapnya
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- News 3 -->
+      <div class="news-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="news-img nc-3">
+          <div class="news-img-icon">
+            <svg viewBox="0 0 24 24"><path d="M10.5 3h3v4.5H18v3h-4.5V15h-3v-4.5H6v-3h4.5V3z"/></svg>
+          </div>
+          <div class="news-cat">Layanan Baru</div>
+        </div>
+        <div class="news-content">
+          <div class="news-meta">
+            <div class="news-date">
+              <svg viewBox="0 0 24 24"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19a2 2 0 002 2h14a2 2 0 002-2V5c0-1.1-.89-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>
+              15 Maret 2025
+            </div>
+          </div>
+          <h3>RS Sehat Medika Hadirkan Layanan Telemedicine 24/7 untuk Konsultasi Online</h3>
+          <p>Kini konsultasi dengan dokter spesialis lebih mudah tanpa perlu keluar rumah. Layanan telemedicine kami siap melayani kapan pun Anda butuh.</p>
+          <a href="#" class="news-read-more">
+            Baca Selengkapnya
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center" style="margin-top:48px;" data-aos="fade-up">
+      <a href="#" class="btn btn-secondary">
+        <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:currentColor"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        Lihat Semua Berita
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     Contact Section
+============================================================ -->
+<section id="contact" class="section-padding">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <div class="section-tag">
+        <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:currentColor"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C9.61 21 3 14.39 3 6.5c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.24 1.02l-2.21 2.2z"/></svg>
+        Kontak
+      </div>
+      <h2 class="section-title">Hubungi <span>Kami</span></h2>
+      <p class="section-desc">
+        Tim kami siap membantu Anda 24 jam sehari, 7 hari seminggu. 
+        Jangan ragu untuk menghubungi kami kapan saja.
+      </p>
+    </div>
+
+    <div class="contact-inner">
+      <!-- Info -->
+      <div data-aos="fade-right">
+        <h3 style="font-family:var(--font-main);font-size:1.3rem;font-weight:700;color:var(--text-dark);margin-bottom:8px">
+          Informasi Kontak
+        </h3>
+        <p style="font-size:0.9rem;color:var(--text-medium);margin-bottom:4px">
+          Kami siap melayani Anda dengan sepenuh hati.
+        </p>
+
+        <div class="contact-cards">
+          <div class="contact-card">
+            <div class="contact-card-icon cci-blue">
+              <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>
+            </div>
+            <div class="contact-card-text">
+              <h4>Alamat</h4>
+              <p>Jl. Kesehatan No. 123, Kebayoran Baru<br>Jakarta Selatan, 12160</p>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-card-icon cci-green">
+              <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C9.61 21 3 14.39 3 6.5c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.24 1.02l-2.21 2.2z"/></svg>
+            </div>
+            <div class="contact-card-text">
+              <h4>Telepon & WhatsApp</h4>
+              <p>(021) 7654-3210 | Hotline: 119<br>WhatsApp: +62 812-3456-7890</p>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-card-icon cci-orange">
+              <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            </div>
+            <div class="contact-card-text">
+              <h4>Email</h4>
+              <p>info@rssehatmedika.id<br>humas@rssehatmedika.id</p>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-card-icon cci-blue">
+              <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
+            </div>
+            <div class="contact-card-text">
+              <h4>Jam Operasional</h4>
+              <p>IGD & Rawat Darurat: 24 Jam<br>Rawat Jalan: Sen–Sab 07:00–20:00</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Map + Contact Form -->
+      <div data-aos="fade-left">
+        <!-- Map Placeholder -->
+        <div class="contact-map">
+          <div class="map-placeholder">
+            <div class="map-pin">
+              <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>
+            </div>
+            <p>RS Sehat Medika – Jakarta Selatan</p>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="contact-form-section">
+            <h3>Kirim Pesan</h3>
+            <form id="contact-form" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Nama</label>
+                  <input type="text" class="form-control" placeholder="Nama Anda" />
+                </div>
+                <div class="form-group">
+                  <label>Email</label>
+                  <input type="email" class="form-control" placeholder="email@contoh.com" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Subjek</label>
+                <input type="text" class="form-control" placeholder="Perihal pesan" />
+              </div>
+              <div class="form-group">
+                <label>Pesan</label>
+                <textarea class="form-control" rows="4" placeholder="Tulis pesan Anda di sini..."></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">
+                <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:white"><path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/></svg>
+                Kirim Pesan
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     Footer
+============================================================ -->
+<footer id="footer">
+  <div class="footer-top">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand -->
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="footer-logo-icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10.5 3h3v4.5H18v3h-4.5V15h-3v-4.5H6v-3h4.5V3z"/>
+              </svg>
+            </div>
+            <span class="footer-logo-name">RS Sehat Medika</span>
+          </div>
+          <p class="footer-desc">
+            Rumah sakit terpercaya dengan layanan medis komprehensif, dokter spesialis berpengalaman, 
+            dan fasilitas modern untuk kesehatan optimal keluarga Indonesia.
+          </p>
+          <div class="footer-socials">
+            <a href="#" class="footer-social" aria-label="Facebook">
+              <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3V2z"/></svg>
+            </a>
+            <a href="#" class="footer-social" aria-label="Instagram">
+              <svg viewBox="0 0 24 24"><path d="M16 2H8a6 6 0 00-6 6v8a6 6 0 006 6h8a6 6 0 006-6V8a6 6 0 00-6-6zm4 14a4 4 0 01-4 4H8a4 4 0 01-4-4V8a4 4 0 014-4h8a4 4 0 014 4v8zm-8-9a5 5 0 100 10A5 5 0 0012 7zm0 8a3 3 0 110-6 3 3 0 010 6zm5-9a1 1 0 100 2 1 1 0 000-2z"/></svg>
+            </a>
+            <a href="#" class="footer-social" aria-label="Twitter / X">
+              <svg viewBox="0 0 24 24"><path d="M4 4l16 16M4 20L20 4"/></svg>
+            </a>
+            <a href="#" class="footer-social" aria-label="YouTube">
+              <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-col">
+          <h4>Navigasi Cepat</h4>
+          <ul class="footer-links">
+            <li><a href="#about" class="footer-link">Tentang Kami</a></li>
+            <li><a href="#services" class="footer-link">Layanan Medis</a></li>
+            <li><a href="#doctors" class="footer-link">Tim Dokter</a></li>
+            <li><a href="#facilities" class="footer-link">Fasilitas</a></li>
+            <li><a href="#appointment" class="footer-link">Buat Janji</a></li>
+            <li><a href="#news" class="footer-link">Berita & Info</a></li>
+            <li><a href="#contact" class="footer-link">Hubungi Kami</a></li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div class="footer-col">
+          <h4>Layanan Unggulan</h4>
+          <ul class="footer-links">
+            <li><a href="#services" class="footer-link">Kardiologi</a></li>
+            <li><a href="#services" class="footer-link">Neurologi</a></li>
+            <li><a href="#services" class="footer-link">Bedah Umum</a></li>
+            <li><a href="#services" class="footer-link">Onkologi</a></li>
+            <li><a href="#services" class="footer-link">Kebidanan</a></li>
+            <li><a href="#services" class="footer-link">Radiologi</a></li>
+            <li><a href="#services" class="footer-link">IGD 24 Jam</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-col">
+          <h4>Kontak Darurat</h4>
+          <ul class="footer-contact-list">
+            <li class="footer-contact-item">
+              <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C9.61 21 3 14.39 3 6.5c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.24 1.02l-2.21 2.2z"/></svg>
+              <span>IGD: (021) 7654-3210</span>
+            </li>
+            <li class="footer-contact-item">
+              <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C9.61 21 3 14.39 3 6.5c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.24 1.02l-2.21 2.2z"/></svg>
+              <span>Hotline Nasional: 119</span>
+            </li>
+            <li class="footer-contact-item">
+              <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              <span>info@rssehatmedika.id</span>
+            </li>
+            <li class="footer-contact-item">
+              <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>
+              <span>Jl. Kesehatan No. 123, Jakarta Selatan</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="footer-bottom">
+      <p class="footer-copyright">
+        &copy; 2025 <span>RS Sehat Medika</span>. Seluruh hak cipta dilindungi undang-undang.
+      </p>
+      <div class="footer-bottom-links">
+        <a href="#" class="footer-bottom-link">Kebijakan Privasi</a>
+        <a href="#" class="footer-bottom-link">Syarat & Ketentuan</a>
+        <a href="#" class="footer-bottom-link">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Scroll to Top -->
+<button id="scroll-top" aria-label="Kembali ke atas">
+  <svg viewBox="0 0 24 24">
+    <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+  </svg>
+</button>
+
+<!-- JavaScript -->
+<script src="js/main.js"></script>
+</body>
+</html>
