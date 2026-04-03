@@ -1,0 +1,23 @@
+
+> hospital-management@0.1.0 dev
+> next dev
+
+▲ Next.js 16.2.2 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://172.20.10.3:3000
+- Environments: .env
+✓ Ready in 289ms
+
+ GET /api/stats 200 in 357ms (next.js: 258ms, application-code: 100ms)
+ GET / 200 in 2.7s (next.js: 2.3s, application-code: 460ms)
+ GET /api/news 200 in 109ms (next.js: 68ms, application-code: 42ms)
+ GET /api/departments 200 in 103ms (next.js: 85ms, application-code: 18ms)
+ GET /api/stats 200 in 11ms (next.js: 1478µs, application-code: 9ms)
+ GET / 200 in 112ms (next.js: 13ms, application-code: 99ms)
+ GET /api/news 200 in 44ms (next.js: 1582µs, application-code: 42ms)
+ GET /admin/login 200 in 380ms (next.js: 334ms, proxy.ts: 10ms, application-code: 37ms)
+ GET /api/departments 200 in 11ms (next.js: 3ms, application-code: 9ms)
+ GET /api/doctors 200 in 78ms (next.js: 68ms, application-code: 10ms)
+ GET /api/stats 200 in 14ms (next.js: 1190µs, application-code: 13ms)
+ GET /api/departments 200 in 19ms (next.js: 3ms, application-code: 16ms)
+ POST /api/appointments 201 in 140ms (next.js: 118ms, application-code: 22ms)

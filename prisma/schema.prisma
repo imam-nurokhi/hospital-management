@@ -1,0 +1,117 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Department {
+  id          String   @id @default(cuid())
+  name        String
+  slug        String   @unique
+  description String?
+  icon        String?
+  color       String?
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  doctors     Doctor[]
+  appointments Appointment[]
+}
+
+model Doctor {
+  id           String      @id @default(cuid())
+  name         String
+  slug         String      @unique
+  speciality   String
+  bio          String?
+  photo        String?
+  phone        String?
+  email        String?
+  education    String?
+  experience   Int?
+  rating       Float       @default(4.5)
+  isAvailable  Boolean     @default(true)
+  schedule     Json?
+  departmentId String
+  department   Department  @relation(fields: [departmentId], references: [id])
+  appointments Appointment[]
+  createdAt    DateTime    @default(now())
+}
+
+model Patient {
+  id           String        @id @default(cuid())
+  name         String
+  phone        String
+  email        String?
+  dateOfBirth  DateTime?
+  address      String?
+  bloodType    String?
+  medicalNo    String?       @unique
+  createdAt    DateTime      @default(now())
+  appointments Appointment[]
+}
+
+model Appointment {
+  id               String      @id @default(cuid())
+  appointmentNo    String      @unique
+  patientName      String
+  patientPhone     String
+  patientEmail     String?
+  patientDob       DateTime?
+  departmentId     String
+  department       Department  @relation(fields: [departmentId], references: [id])
+  doctorId         String?
+  doctor           Doctor?     @relation(fields: [doctorId], references: [id])
+  visitDate        DateTime
+  visitTime        String
+  consultationType String
+  complaint        String?
+  status           AppointmentStatus @default(PENDING)
+  notes            String?
+  emailSent        Boolean     @default(false)
+  waSent           Boolean     @default(false)
+  patientId        String?
+  patient          Patient?    @relation(fields: [patientId], references: [id])
+  createdAt        DateTime    @default(now())
+  updatedAt        DateTime    @updatedAt
+}
+
+enum AppointmentStatus {
+  PENDING
+  CONFIRMED
+  COMPLETED
+  CANCELLED
+}
+
+model ContactMessage {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  subject   String?
+  message   String
+  isRead    Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
+
+model News {
+  id          String   @id @default(cuid())
+  title       String
+  slug        String   @unique
+  excerpt     String
+  content     String
+  category    String
+  image       String?
+  author      String
+  publishedAt DateTime @default(now())
+  isPublished Boolean  @default(true)
+}
+
+model AdminUser {
+  id        String   @id @default(cuid())
+  name      String
+  email     String   @unique
+  password  String
+  role      String   @default("ADMIN")
+  createdAt DateTime @default(now())
+}

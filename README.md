@@ -1,68 +1,137 @@
-# RS Sehat Medika – Hospital Management Website
+# RS Sehat Medika – Hospital Management System
 
-Website profesional untuk manajemen rumah sakit yang lengkap, responsif, dan modern.
+A full-stack hospital website built with Next.js 16, TypeScript, PostgreSQL, and Prisma. Features online appointment booking with WhatsApp and Email notifications.
 
-## 🏥 Fitur Utama
+## ✨ Features
 
-- **Landing Page** – Hero section dengan animasi typing & particle background
-- **Navigasi** – Sticky navbar responsif dengan hamburger menu untuk mobile
-- **Statistik** – Counter animasi untuk jumlah pasien, dokter, departemen
-- **Tentang Kami** – Profil rumah sakit dengan keunggulan & penghargaan
-- **Layanan Medis** – 6 departemen utama (Kardiologi, Neurologi, Bedah, dll.)
-- **Tim Dokter** – Profil dokter spesialis dengan status ketersediaan
-- **Buat Janji Temu** – Formulir pendaftaran lengkap dengan konfirmasi
-- **Testimoni Pasien** – Slider otomatis dengan navigasi
-- **Fasilitas** – Galeri fasilitas rumah sakit modern
-- **Berita & Info** – Artikel kesehatan terbaru
-- **Kontak** – Informasi kontak lengkap & form pesan
-- **Footer** – Navigasi, layanan, kontak darurat, sosial media
+- **Online Appointment Booking** – Patients can book appointments, receive confirmation via Email & WhatsApp
+- **14 Medical Departments** – Full department management with doctor assignment
+- **Doctor Profiles** – Specialization, availability, rating, and schedule
+- **Admin Dashboard** – Manage appointments, patients, doctors, and contact messages
+- **WhatsApp Notifications** – Automated WA messages via callmebot.com API
+- **Email Notifications** – Beautiful HTML email templates via Nodemailer/Gmail SMTP
+- **Responsive Design** – Mobile-first design with Tailwind CSS
+- **Real-time Stats** – Live patient and appointment statistics
 
-## 🎨 Desain
+## 🛠 Tech Stack
 
-- Responsif & mobile-friendly (breakpoint: 1024px, 768px, 480px)
-- Animasi scroll (AOS – Animate On Scroll)
-- Animated counter untuk statistik
-- Smooth scroll navigation
-- Loading screen animation
-- Floating action cards di hero
-- Glassmorphism effect di navbar
+| Technology | Purpose |
+|---|---|
+| Next.js 16 + TypeScript | Full-stack framework |
+| PostgreSQL | Database |
+| Prisma 7 | ORM with pg adapter |
+| Tailwind CSS v4 | Styling |
+| Nodemailer | Email notifications |
+| callmebot.com | WhatsApp notifications |
+| bcryptjs | Password hashing |
 
-## 🛠️ Teknologi
+## 🚀 Quick Start
 
-- HTML5 Semantik
-- CSS3 modern (Custom Properties, Grid, Flexbox, Animations)
-- Vanilla JavaScript (ES6+)
-- Google Fonts (Poppins + Inter)
-- SVG icons (inline, zero dependency)
+### Prerequisites
+- Node.js 18+
+- PostgreSQL (running locally)
+- npm
 
-## 📁 Struktur
-
-```
-hospital-management/
-├── index.html          # Halaman utama (single page)
-├── css/
-│   └── style.css       # Stylesheet lengkap
-├── js/
-│   └── main.js         # JavaScript interaktivitas
-└── README.md
-```
-
-## 🚀 Cara Menjalankan
-
-Cukup buka `index.html` di browser modern. Tidak memerlukan server atau build tool.
+### Installation
 
 ```bash
-# Atau dengan simple HTTP server
-npx serve .
-# atau
-python3 -m http.server 8080
+git clone <repo-url>
+cd hospital-management
+npm install
 ```
 
-## 📱 Responsif
+### Environment Setup
 
-| Breakpoint | Tampilan |
-|-----------|---------|
-| ≥ 1200px  | Desktop penuh (4 kolom dokter, 3 kolom layanan) |
-| 1024px    | Tablet landscape (layout 1 kolom untuk beberapa section) |
-| 768px     | Tablet/Mobile (hamburger menu, 2 kolom) |
-| 480px     | Mobile kecil (1 kolom, font lebih kecil) |
+Copy `.env` and update with your credentials:
+```bash
+cp .env .env.local
+# Edit .env with your actual values
+```
+
+### Database Setup
+
+```bash
+# Create database
+createdb -U postgres hospital_sehat
+
+# Run migrations
+npm run db:migrate
+
+# Seed with sample data
+npm run db:seed
+```
+
+### Start Development Server
+
+```bash
+npm run dev
+```
+
+Visit http://localhost:3000
+
+## 🔑 Test Accounts
+
+| Role | Email | Password |
+|------|-------|----------|
+| Admin | admin@rssehatmedika.com | admin123456 |
+
+## 📁 Project Structure
+
+```
+src/
+├── app/
+│   ├── page.tsx              # Home page (all sections)
+│   ├── layout.tsx            # Root layout
+│   ├── globals.css           # Global styles
+│   ├── admin/
+│   │   ├── layout.tsx        # Admin layout with sidebar
+│   │   ├── page.tsx          # Dashboard overview
+│   │   ├── appointments/     # Appointment management
+│   │   ├── patients/         # Patient list
+│   │   ├── doctors/          # Doctor profiles
+│   │   ├── messages/         # Contact messages
+│   │   └── login/            # Admin login
+│   └── api/
+│       ├── appointments/     # Appointment CRUD
+│       ├── departments/      # Department list
+│       ├── doctors/          # Doctor list
+│       ├── stats/            # Aggregate statistics
+│       ├── contact/          # Contact messages
+│       ├── news/             # News articles
+│       └── admin/            # Admin auth
+├── components/
+│   ├── Navbar.tsx            # Site navigation
+│   ├── AppointmentForm.tsx   # Booking form
+│   ├── AdminSidebar.tsx      # Admin navigation
+│   └── ClientInit.tsx        # Client-side initialization
+└── lib/
+    ├── prisma.ts             # Database client
+    └── notifications.ts      # Email & WhatsApp
+```
+
+## 📜 Available Scripts
+
+```bash
+npm run dev          # Start development server
+npm run build        # Build for production
+npm run start        # Start production server
+npm run db:migrate   # Run Prisma migrations
+npm run db:seed      # Seed database with sample data
+npm run db:studio    # Open Prisma Studio (GUI)
+```
+
+## 🔧 Configuration
+
+See [SETUP.md](docs/SETUP.md) for detailed configuration.
+
+## 📨 Notifications
+
+See [NOTIFICATIONS.md](docs/NOTIFICATIONS.md) for WhatsApp and Email setup.
+
+## 🗄 Database
+
+See [DATABASE.md](docs/DATABASE.md) for schema documentation.
+
+## 📡 API
+
+See [API.md](docs/API.md) for API endpoint documentation.
