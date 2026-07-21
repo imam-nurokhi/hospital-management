@@ -1,5 +1,6 @@
 import { NextResponse, NextRequest } from "next/server";
 import { prisma } from "@/lib/prisma";
+import { getPublicWebsiteFallback } from "@/server/gateway/hisDummyData";
 
 export async function GET(req: NextRequest) {
   try {
@@ -12,6 +13,9 @@ export async function GET(req: NextRequest) {
     });
     return NextResponse.json(doctors);
   } catch {
-    return NextResponse.json({ error: "Failed" }, { status: 500 });
+    const { searchParams } = new URL(req.url);
+    const departmentId = searchParams.get("departmentId");
+    const doctors = getPublicWebsiteFallback().doctors;
+    return NextResponse.json(departmentId ? doctors.filter((doctor) => doctor.departmentId === departmentId) : doctors);
   }
 }

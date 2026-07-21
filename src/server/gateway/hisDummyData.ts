@@ -66,6 +66,28 @@ type QueueDisplay = {
   color: string;
 };
 
+const publicDepartments = [
+  { id: "dept-cardio", name: "Kardiologi", slug: "kardiologi", description: "Layanan jantung terpadu dengan dokter spesialis berpengalaman.", icon: "❤️", color: "#ef4444", isActive: true },
+  { id: "dept-neuro", name: "Neurologi", slug: "neurologi", description: "Diagnosis dan terapi gangguan saraf pusat maupun tepi.", icon: "🧠", color: "#8b5cf6", isActive: true },
+  { id: "dept-lab", name: "Laboratorium", slug: "laboratorium", description: "Pemeriksaan laboratorium cepat untuk rawat jalan dan MCU.", icon: "🔬", color: "#10b981", isActive: true },
+  { id: "dept-rad", name: "Radiologi", slug: "radiologi", description: "Pencitraan medis modern untuk diagnosis lebih presisi.", icon: "🩻", color: "#3b82f6", isActive: true },
+  { id: "dept-mcu", name: "Medical Check Up", slug: "mcu", description: "Paket pemeriksaan kesehatan individu dan korporat.", icon: "🏥", color: "#0b4f8a", isActive: true },
+  { id: "dept-igd", name: "IGD 24 Jam", slug: "igd", description: "Layanan gawat darurat aktif sepanjang hari.", icon: "🚨", color: "#f97316", isActive: true },
+];
+
+const publicDoctors = [
+  { id: "doc-siti", name: "Dr. Siti Rahayu", specialty: "Sp.JP", photo: null, isAvailable: true, departmentId: "dept-cardio", department: publicDepartments[0] },
+  { id: "doc-ahmad", name: "Dr. Ahmad Fauzi", specialty: "Dokter Umum", photo: null, isAvailable: true, departmentId: "dept-igd", department: publicDepartments[5] },
+  { id: "doc-sekar", name: "Dr. Sekar Anindya", specialty: "Sp.Rad", photo: null, isAvailable: true, departmentId: "dept-rad", department: publicDepartments[3] },
+  { id: "doc-reno", name: "Dr. Reno Saputra", specialty: "Sp.PK", photo: null, isAvailable: true, departmentId: "dept-lab", department: publicDepartments[2] },
+];
+
+const publicNews = [
+  { id: "news-1", title: "Layanan MCU Korporat Kini Lebih Cepat", slug: "layanan-mcu-korporat", excerpt: "Paket pemeriksaan kesehatan untuk perusahaan dengan alur digital dan hasil terintegrasi.", imageUrl: null, publishedAt: "2026-07-19T08:00:00.000Z", isPublished: true },
+  { id: "news-2", title: "Tips Menjaga Kesehatan Jantung Keluarga", slug: "tips-kesehatan-jantung", excerpt: "Kenali tanda awal gangguan jantung dan jadwalkan konsultasi rutin dengan dokter spesialis.", imageUrl: null, publishedAt: "2026-07-18T08:00:00.000Z", isPublished: true },
+  { id: "news-3", title: "IGD 24/7 Siap Melayani Pasien Darurat", slug: "igd-24-jam", excerpt: "Tim medis dan ambulans siaga untuk kebutuhan darurat setiap hari.", imageUrl: null, publishedAt: "2026-07-17T08:00:00.000Z", isPublished: true },
+];
+
 export type ModuleShortcut = {
   href: string;
   label: string;
@@ -230,6 +252,20 @@ export function getRegistrationQueueSnapshot() {
       serving: queueDisplays.length + 1,
       checkedIn: registrations.filter((item) => item.status === "Checked-in").length,
       verified: registrations.filter((item) => item.status === "Verified").length,
+    },
+  };
+}
+
+export function getPublicWebsiteFallback() {
+  return {
+    departments: publicDepartments,
+    doctors: publicDoctors,
+    news: publicNews,
+    stats: {
+      patients: 15000,
+      doctors: 85,
+      departments: publicDepartments.length,
+      appointments: 4820,
     },
   };
 }

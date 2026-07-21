@@ -5,6 +5,7 @@ import {
   getMasterDataSnapshot,
   getModuleShortcuts,
   getPatientRegistry,
+  getPublicWebsiteFallback,
   getRegistrationQueueSnapshot,
   validateDummyAdminLogin,
 } from "./hisDummyData";
@@ -58,4 +59,13 @@ test("registration and queue dummy snapshot exposes next FE phase", () => {
   assert.equal(snapshot.queueCounters.waiting, 9);
   assert.equal(snapshot.queueCounters.serving, 5);
   assert.equal(snapshot.queueDisplays.length, 4);
+});
+
+test("public website fallback keeps homepage sections populated without database", () => {
+  const fallback = getPublicWebsiteFallback();
+
+  assert.equal(fallback.departments.length, 6);
+  assert.equal(fallback.doctors.length, 4);
+  assert.equal(fallback.news.length, 3);
+  assert.equal(fallback.stats.doctors, 85);
 });

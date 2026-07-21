@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
+import { getPublicWebsiteFallback } from "@/server/gateway/hisDummyData";
 
 export async function GET() {
   try {
@@ -9,6 +10,6 @@ export async function GET() {
     });
     return NextResponse.json(departments);
   } catch {
-    return NextResponse.json({ error: "Failed" }, { status: 500 });
+    return NextResponse.json(getPublicWebsiteFallback().departments);
   }
 }
