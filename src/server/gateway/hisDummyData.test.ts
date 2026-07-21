@@ -3,6 +3,8 @@ import test from "node:test";
 import {
   getFoundationDashboard,
   getMasterDataSnapshot,
+  getModuleReviewDetail,
+  getModuleReviewDetails,
   getModuleShortcuts,
   getPatientRegistry,
   getPrototypeModuleLandscape,
@@ -47,10 +49,25 @@ test("dummy admin login accepts review credentials only", () => {
 test("module shortcuts include every phase review target", () => {
   const shortcuts = getModuleShortcuts();
 
-  assert.equal(shortcuts.length, 19);
+  assert.equal(shortcuts.length, 20);
   assert.ok(shortcuts.some((shortcut) => shortcut.href === "/admin/master-data"));
   assert.ok(shortcuts.some((shortcut) => shortcut.href === "/admin/registration"));
   assert.ok(shortcuts.some((shortcut) => shortcut.href === "/admin/queue"));
+});
+
+test("every planned FE shortcut now has a reviewable module detail", () => {
+  const reviewDetails = getModuleReviewDetails();
+  const plannedSlugs = getModuleShortcuts()
+    .map((shortcut) => shortcut.href.match(/module=([^&]+)/)?.[1])
+    .filter((slug): slug is string => Boolean(slug));
+
+  assert.equal(reviewDetails.length, 11);
+  assert.deepEqual(
+    plannedSlugs,
+    ["mcu", "clinical", "laboratory", "radiology", "mcu-review", "billing", "back-office", "inpatient", "surgery", "kiosk", "patient-portal"],
+  );
+  assert.ok(plannedSlugs.every((slug) => getModuleReviewDetail(slug).slug === slug));
+  assert.equal(getModuleReviewDetail("patient-portal").title, "Portal Pasien");
 });
 
 test("registration and queue dummy snapshot exposes next FE phase", () => {

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getModuleShortcuts, getPrototypeModuleLandscape } from "@/server/gateway/hisDummyData";
+import { getModuleReviewDetail, getModuleShortcuts, getPrototypeModuleLandscape } from "@/server/gateway/hisDummyData";
 
 type SearchParams = Promise<{ module?: string }>;
 
@@ -15,10 +15,17 @@ const readinessClass = {
   Queued: "bg-amber-50 text-amber-700",
 };
 
+const alertClass = {
+  info: "border-sky-100 bg-sky-50 text-sky-800",
+  warning: "border-amber-100 bg-amber-50 text-amber-800",
+  success: "border-emerald-100 bg-emerald-50 text-emerald-800",
+};
+
 export default async function ModuleShortcutsPage({ searchParams }: { searchParams: SearchParams }) {
   const { module } = await searchParams;
   const shortcuts = getModuleShortcuts();
   const prototypeModules = getPrototypeModuleLandscape();
+  const detail = getModuleReviewDetail(module);
   const selected = shortcuts.find((shortcut) => shortcut.href.endsWith(`module=${module}`)) ?? shortcuts[0];
   const grouped = shortcuts.reduce<Record<string, typeof shortcuts>>((acc, shortcut) => {
     acc[shortcut.group] = [...(acc[shortcut.group] ?? []), shortcut];
@@ -33,14 +40,95 @@ export default async function ModuleShortcutsPage({ searchParams }: { searchPara
         <p className="mt-4 max-w-3xl text-sm leading-6 text-blue-50">Semua modul dari plan bisa diklik dari sini. Modul yang belum dibuat tampil sebagai preview stub, jadi review alur FE tetap lancar.</p>
       </div>
 
-      <section className="hospital-card mb-6 p-5">
-        <div className="flex flex-wrap items-start justify-between gap-4">
-          <div>
-            <p className="text-sm font-bold text-slate-500">Selected module</p>
-            <h2 className="mt-1 text-2xl font-black text-slate-950">{selected.label}</h2>
-            <p className="mt-2 max-w-2xl text-sm text-slate-600">{selected.description}</p>
+      <section className="hospital-card mb-6 overflow-hidden">
+        <div className={`bg-gradient-to-r ${detail.accent} p-6 text-white lg:p-7`}>
+          <div className="flex flex-wrap items-start justify-between gap-4">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-widest text-white/75">{detail.eyebrow}</p>
+              <h2 className="mt-2 text-3xl font-black lg:text-4xl">{detail.title}</h2>
+              <p className="mt-3 max-w-3xl text-sm leading-6 text-white/90">{detail.summary}</p>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              <button className="rounded-full bg-white px-4 py-2 text-sm font-black text-slate-950 shadow-lg shadow-slate-950/15">{detail.primaryAction}</button>
+              <button className="rounded-full border border-white/40 px-4 py-2 text-sm font-bold text-white">{detail.secondaryAction}</button>
+            </div>
           </div>
-          <span className={`rounded-full px-3 py-1 text-xs font-bold ${statusClass[selected.status]}`}>{selected.status}</span>
+        </div>
+
+        <div className="grid gap-px bg-slate-100 sm:grid-cols-2 xl:grid-cols-4">
+          {detail.metrics.map((metric) => (
+            <div key={metric.label} className={`border-l-4 ${metric.tone} bg-white p-5`}>
+              <p className="text-sm font-semibold text-slate-500">{metric.label}</p>
+              <p className="mt-3 text-3xl font-black text-slate-950">{metric.value}</p>
+              <p className="mt-1 text-xs font-semibold text-slate-400">{metric.note}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="mb-6 grid gap-6 xl:grid-cols-[0.9fr_1.1fr]">
+        <div className="hospital-card overflow-hidden">
+          <div className="border-b border-slate-100 p-5">
+            <p className="text-xs font-bold uppercase tracking-widest text-[#174a7e]">Operational lanes</p>
+            <h2 className="mt-1 text-xl font-black text-slate-950">Alur kerja modul</h2>
+          </div>
+          <div className="grid gap-px bg-slate-100 md:grid-cols-3 xl:grid-cols-1">
+            {detail.lanes.map((lane) => (
+              <div key={lane.title} className="bg-white p-5">
+                <div className="flex items-center justify-between gap-3">
+                  <h3 className="font-black text-slate-950">{lane.title}</h3>
+                  <span className="rounded-full bg-[#e7f8f6] px-3 py-1 text-xs font-black text-[#0b8f87]">{lane.count}</span>
+                </div>
+                <div className="mt-4 space-y-2">
+                  {lane.items.map((item) => (
+                    <div key={item} className="flex items-center gap-2 rounded-2xl bg-[#f6f9fc] px-3 py-2 text-sm font-semibold text-slate-600">
+                      <span className="h-2 w-2 rounded-full bg-emerald-400" />
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="hospital-card overflow-hidden">
+          <div className="border-b border-slate-100 p-5">
+            <p className="text-xs font-bold uppercase tracking-widest text-[#174a7e]">Dummy worklist</p>
+            <h2 className="mt-1 text-xl font-black text-slate-950">Kasus dan transaksi aktif</h2>
+          </div>
+          <div className="divide-y divide-slate-100">
+            {detail.records.map((record) => (
+              <div key={record.id} className="grid gap-4 p-5 lg:grid-cols-[140px_1fr_130px] lg:items-center">
+                <div>
+                  <p className="font-mono text-xs font-black text-[#174a7e]">{record.id}</p>
+                  <p className="mt-1 text-sm font-black text-slate-950">{record.subject}</p>
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-slate-600">{record.context}</p>
+                  <p className="mt-1 text-xs text-slate-400">Owner: {record.owner}</p>
+                  <div className="mt-3 h-2 overflow-hidden rounded-full bg-slate-100">
+                    <div className="h-full rounded-full bg-[#13d59f]" style={{ width: `${record.progress}%` }} />
+                  </div>
+                </div>
+                <span className="w-fit rounded-full bg-slate-100 px-3 py-1 text-xs font-black text-slate-600">{record.status}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mb-6 grid gap-3 lg:grid-cols-2">
+        {detail.alerts.map((alert) => (
+          <div key={alert.title} className={`rounded-3xl border p-4 ${alertClass[alert.tone]}`}>
+            <p className="font-black">{alert.title}</p>
+            <p className="mt-1 text-sm leading-6 opacity-80">{alert.detail}</p>
+          </div>
+        ))}
+        <div className="rounded-3xl border border-slate-100 bg-white p-4">
+          <p className="font-black text-slate-950">Selected shortcut</p>
+          <p className="mt-1 text-sm text-slate-500">{selected.label} - {selected.description}</p>
+          <span className={`mt-3 inline-flex rounded-full px-3 py-1 text-xs font-bold ${statusClass[selected.status]}`}>{selected.status}</span>
         </div>
       </section>
 
