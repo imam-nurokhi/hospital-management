@@ -19,14 +19,14 @@ export default async function ModuleShortcutsPage({ searchParams }: { searchPara
   }, {});
 
   return (
-    <div className="min-h-screen bg-slate-50 p-6 lg:p-8">
-      <div className="mb-6">
-        <p className="text-xs font-bold uppercase tracking-widest text-[#0b4f8a]">FE review shortcuts</p>
-        <h1 className="mt-2 text-3xl font-black text-slate-950">Module review board</h1>
-        <p className="mt-2 text-sm text-slate-600">Semua modul dari plan bisa diklik dari sini. Modul yang belum dibuat tampil sebagai preview stub, jadi review alur FE tetap lancar.</p>
+    <div className="min-h-screen bg-[#f6f9fc] p-6 lg:p-8">
+      <div className="hospital-grid-surface mb-6 rounded-[28px] p-6 text-white shadow-xl shadow-blue-950/15 lg:p-8">
+        <p className="hospital-pill inline-flex px-4 py-2 text-xs font-bold uppercase tracking-widest">FE review shortcuts</p>
+        <h1 className="mt-5 text-4xl font-black text-white lg:text-5xl">Module <span className="text-emerald-400">review board</span></h1>
+        <p className="mt-4 max-w-3xl text-sm leading-6 text-blue-50">Semua modul dari plan bisa diklik dari sini. Modul yang belum dibuat tampil sebagai preview stub, jadi review alur FE tetap lancar.</p>
       </div>
 
-      <section className="mb-6 rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
+      <section className="hospital-card mb-6 p-5">
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div>
             <p className="text-sm font-bold text-slate-500">Selected module</p>
@@ -39,7 +39,7 @@ export default async function ModuleShortcutsPage({ searchParams }: { searchPara
 
       <section className="grid gap-4 xl:grid-cols-3">
         {Object.entries(grouped).map(([group, items]) => (
-          <div key={group} className="rounded-lg border border-slate-200 bg-white shadow-sm">
+          <div key={group} className="hospital-card overflow-hidden">
             <div className="border-b border-slate-100 p-4">
               <h2 className="font-black text-slate-950">{group}</h2>
             </div>

@@ -4,6 +4,10 @@
   --primary: #0b4f8a;
   --primary-light: #1a7cc7;
   --accent: #10b981;
+  --brand-navy: #174a7e;
+  --brand-navy-dark: #103b68;
+  --brand-orange: #f27a2e;
+  --brand-ink: #1a1a2e;
   --danger: #ef4444;
   --font-inter: Arial, Helvetica, sans-serif;
   --font-poppins: Arial, Helvetica, sans-serif;
@@ -15,8 +19,43 @@
 
 body {
   font-family: var(--font-inter);
-  color: #1f2937;
+  color: var(--brand-ink);
   background: #ffffff;
+}
+
+.hospital-grid-surface {
+  background-color: var(--brand-navy);
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+    radial-gradient(circle at 22% 84%, rgba(255, 255, 255, 0.11), transparent 18rem),
+    radial-gradient(circle at 72% 28%, rgba(26, 124, 199, 0.32), transparent 20rem);
+  background-size: 56px 56px, 56px 56px, auto, auto;
+}
+
+.hospital-card {
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 22px 55px rgba(16, 59, 104, 0.12);
+}
+
+.hospital-pill {
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+}
+
+.hospital-cta {
+  background: var(--brand-orange);
+  color: #ffffff;
+  box-shadow: 0 16px 32px rgba(242, 122, 46, 0.28);
+}
+
+.hospital-cta:hover {
+  background: #e8651c;
 }
 
 /* Loading Screen */

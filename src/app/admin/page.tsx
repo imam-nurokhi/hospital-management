@@ -18,29 +18,29 @@ export default function AdminDashboard() {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50 p-6 lg:p-8">
-      <section className="mb-8 grid gap-6 xl:grid-cols-[1.4fr_0.6fr]">
+    <div className="min-h-screen bg-[#f6f9fc] p-6 lg:p-8">
+      <section className="hospital-grid-surface mb-8 grid gap-6 rounded-[28px] p-6 text-white shadow-xl shadow-blue-950/15 xl:grid-cols-[1.4fr_0.6fr] lg:p-8">
         <div>
-          <p className="text-xs font-bold uppercase tracking-widest text-[#0b4f8a]">HIS Microservices MVP</p>
-          <h1 className="mt-2 text-3xl font-black text-slate-950">Foundation command center</h1>
-          <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-600">
+          <p className="hospital-pill inline-flex px-4 py-2 text-xs font-bold uppercase tracking-widest">HIS Microservices MVP</p>
+          <h1 className="mt-5 max-w-3xl text-4xl font-black leading-tight lg:text-5xl">Foundation <span className="text-emerald-400">command center</span></h1>
+          <p className="mt-4 max-w-2xl text-sm leading-6 text-blue-50 lg:text-base">
             FE Phase 1 berjalan memakai dummy data berbentuk gateway response, supaya nanti tinggal dipindah ke BFF route saat service dan DB siap.
           </p>
         </div>
-        <div className="rounded-lg border border-slate-200 bg-white p-4 shadow-sm">
+        <div className="rounded-3xl bg-white p-5 text-[#1a1a2e] shadow-2xl shadow-blue-950/20">
           <p className="text-xs font-bold uppercase text-slate-400">Next FE slice</p>
           <div className="mt-3 flex flex-wrap gap-2">
-            <Link className="rounded-md bg-[#0b4f8a] px-3 py-2 text-sm font-bold text-white hover:bg-[#1a7cc7]" href="/admin/identity">Identity</Link>
-            <Link className="rounded-md border border-slate-200 px-3 py-2 text-sm font-bold text-slate-700 hover:bg-slate-50" href="/admin/master-data">Master data</Link>
-            <Link className="rounded-md border border-slate-200 px-3 py-2 text-sm font-bold text-slate-700 hover:bg-slate-50" href="/admin/patients">Patient registry</Link>
-            <Link className="rounded-md border border-slate-200 px-3 py-2 text-sm font-bold text-slate-700 hover:bg-slate-50" href="/admin/modules">Semua modul</Link>
+            <Link className="hospital-cta rounded-full px-4 py-2 text-sm font-bold" href="/admin/identity">Identity</Link>
+            <Link className="rounded-full border border-slate-200 px-4 py-2 text-sm font-bold text-slate-700 hover:bg-slate-50" href="/admin/master-data">Master data</Link>
+            <Link className="rounded-full border border-slate-200 px-4 py-2 text-sm font-bold text-slate-700 hover:bg-slate-50" href="/admin/patients">Patient registry</Link>
+            <Link className="rounded-full border border-slate-200 px-4 py-2 text-sm font-bold text-slate-700 hover:bg-slate-50" href="/admin/modules">Semua modul</Link>
           </div>
         </div>
       </section>
 
       <section className="mb-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
         {metrics.map((metric) => (
-          <div key={metric.label} className={`rounded-lg border-l-4 ${metric.tone} border-y border-r border-slate-200 bg-white p-5 shadow-sm`}>
+          <div key={metric.label} className={`hospital-card border-l-4 ${metric.tone} p-5`}>
             <p className="text-sm font-semibold text-slate-500">{metric.label}</p>
             <p className="mt-3 text-3xl font-black text-slate-950">{metric.value}</p>
             <p className="mt-1 text-xs text-slate-400">{metric.note}</p>
@@ -48,7 +48,7 @@ export default function AdminDashboard() {
         ))}
       </section>
 
-      <section className="rounded-lg border border-slate-200 bg-white shadow-sm">
+      <section className="hospital-card overflow-hidden">
         <div className="border-b border-slate-100 p-5">
           <h2 className="text-lg font-black text-slate-950">Phase 1 workstreams</h2>
         </div>
@@ -66,13 +66,13 @@ export default function AdminDashboard() {
         </div>
       </section>
 
-      <section className="mt-8 rounded-lg border border-slate-200 bg-white shadow-sm">
+      <section className="hospital-card mt-8 overflow-hidden">
         <div className="border-b border-slate-100 p-5">
           <h2 className="text-lg font-black text-slate-950">Shortcut review modul</h2>
         </div>
         <div className="grid gap-px bg-slate-100 sm:grid-cols-2 xl:grid-cols-4">
           {shortcuts.map((shortcut) => (
-            <Link key={shortcut.href} href={shortcut.href} className="bg-white p-4 hover:bg-slate-50">
+            <Link key={shortcut.href} href={shortcut.href} className="bg-white p-4 hover:bg-blue-50/60">
               <p className="font-bold text-slate-900">{shortcut.label}</p>
               <p className="mt-1 text-xs text-slate-500">{shortcut.group} · {shortcut.status}</p>
             </Link>

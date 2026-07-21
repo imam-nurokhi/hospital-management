@@ -10,16 +10,16 @@ export default function IdentityPage() {
   const { users, roles } = getIdentitySnapshot();
 
   return (
-    <div className="min-h-screen bg-slate-50 p-6 lg:p-8">
-      <div className="mb-6">
-        <p className="text-xs font-bold uppercase tracking-widest text-[#0b4f8a]">Identity service preview</p>
-        <h1 className="mt-2 text-3xl font-black text-slate-950">Users, roles, permissions</h1>
-        <p className="mt-2 text-sm text-slate-600">Dummy management screen untuk kontrak auth, role matrix, dan permission guard.</p>
+    <div className="min-h-screen bg-[#f6f9fc] p-6 lg:p-8">
+      <div className="hospital-grid-surface mb-6 rounded-[28px] p-6 text-white shadow-xl shadow-blue-950/15 lg:p-8">
+        <p className="hospital-pill inline-flex px-4 py-2 text-xs font-bold uppercase tracking-widest">Identity service preview</p>
+        <h1 className="mt-5 text-4xl font-black lg:text-5xl">Users, roles, <span className="text-emerald-400">permissions</span></h1>
+        <p className="mt-4 max-w-3xl text-sm leading-6 text-blue-50">Dummy management screen untuk kontrak auth, role matrix, dan permission guard.</p>
       </div>
 
       <div className="mb-6 grid gap-4 lg:grid-cols-3">
         {roles.map((role) => (
-          <div key={role.name} className="rounded-lg border border-slate-200 bg-white p-4 shadow-sm">
+          <div key={role.name} className="hospital-card p-4">
             <div className="flex items-start justify-between gap-3">
               <div>
                 <p className="font-black text-slate-950">{role.name}</p>
@@ -36,7 +36,7 @@ export default function IdentityPage() {
         ))}
       </div>
 
-      <div className="overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm">
+      <div className="hospital-card overflow-hidden">
         <div className="border-b border-slate-100 p-4 font-bold text-slate-950">Staff accounts</div>
         <div className="overflow-x-auto">
           <table className="w-full text-sm">

@@ -35,21 +35,46 @@ export default function AdminLoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#0b4f8a] to-[#1a7cc7] flex items-center justify-center p-4">
-      <div className="w-full max-w-md">
-        <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
-          <div className="bg-gradient-to-r from-[#0b4f8a] to-[#1a7cc7] p-8 text-center">
-            <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+    <div className="hospital-grid-surface flex min-h-screen items-center justify-center p-4">
+      <div className="grid w-[calc(100vw-32px)] max-w-[1080px] overflow-hidden rounded-[32px] bg-white shadow-2xl shadow-blue-950/30 lg:grid-cols-[1fr_0.82fr]">
+        <div className="hospital-grid-surface hidden min-w-0 p-10 text-white lg:block">
+          <div className="mb-16 flex items-center gap-4">
+            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/15">
               <svg viewBox="0 0 24 24" className="w-9 h-9 fill-white">
                 <path d="M10.5 3h3v4.5H18v3h-4.5V15h-3v-4.5H6v-3h4.5V3z"/>
               </svg>
             </div>
-            <h1 className="text-white font-bold text-2xl">RS Sehat Medika</h1>
-            <p className="text-blue-200 text-sm mt-1">Admin Dashboard</p>
+            <div>
+              <h1 className="text-xl font-black">RS Sehat Medika</h1>
+              <p className="text-sm text-blue-100/80">Kesehatan Terbaik untuk Anda</p>
+            </div>
+          </div>
+          <span className="hospital-pill inline-flex items-center gap-2 px-4 py-2 text-sm font-bold">
+            <span className="h-2 w-2 rounded-full bg-emerald-400" />
+            Layanan Kesehatan 24/7
+          </span>
+          <h2 className="mt-8 text-4xl font-black leading-tight xl:text-5xl">
+            Dashboard HIS <span className="text-emerald-400">Modern</span> untuk Operasional RS
+          </h2>
+          <p className="mt-6 max-w-md text-lg leading-8 text-blue-50">
+            Review modul admin dengan dummy data sampai microservice dan database siap disambungkan.
+          </p>
+        </div>
+
+        <div className="min-w-0 p-6 sm:p-10">
+          <div className="mb-8 text-center lg:hidden">
+            <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-[#174a7e]">
+              <svg viewBox="0 0 24 24" className="w-9 h-9 fill-white">
+                <path d="M10.5 3h3v4.5H18v3h-4.5V15h-3v-4.5H6v-3h4.5V3z"/>
+              </svg>
+            </div>
+            <h1 className="text-2xl font-black text-[#1a1a2e]">RS Sehat Medika</h1>
+            <p className="mt-1 text-sm text-slate-500">Admin Dashboard</p>
           </div>
 
-          <div className="p-8">
-            <h2 className="text-xl font-bold text-gray-900 mb-6">Masuk ke Dashboard</h2>
+          <div>
+            <h2 className="mb-2 text-2xl font-black text-[#1a1a2e]">Masuk ke Dashboard</h2>
+            <p className="mb-6 text-sm text-slate-500">Gunakan credential demo untuk review UI tanpa DB.</p>
             
             {error && (
               <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-xl text-sm mb-4">
@@ -59,8 +84,9 @@ export default function AdminLoginPage() {
 
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-1.5">Email</label>
+                <label htmlFor="admin-email" className="block text-sm font-semibold text-gray-700 mb-1.5">Email</label>
                 <input
+                  id="admin-email"
                   type="email"
                   value={form.email}
                   onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
@@ -70,8 +96,9 @@ export default function AdminLoginPage() {
                 />
               </div>
               <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-1.5">Password</label>
+                <label htmlFor="admin-password" className="block text-sm font-semibold text-gray-700 mb-1.5">Password</label>
                 <input
+                  id="admin-password"
                   type="password"
                   value={form.password}
                   onChange={e => setForm(f => ({ ...f, password: e.target.value }))}
@@ -83,20 +110,20 @@ export default function AdminLoginPage() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-[#0b4f8a] hover:bg-[#1a7cc7] disabled:bg-gray-400 text-white py-3.5 rounded-xl font-bold transition-all"
+                className="hospital-cta w-full rounded-full py-3.5 font-bold transition-all disabled:bg-gray-400"
               >
                 {loading ? "Memproses..." : "Masuk →"}
               </button>
             </form>
 
-            <div className="mt-6 p-4 bg-gray-50 rounded-xl text-xs text-gray-500 text-center">
+            <div className="mt-6 rounded-2xl bg-[#f6f9fc] p-4 text-center text-xs text-gray-500">
               <p className="font-semibold text-gray-700 mb-1">Demo Credentials:</p>
               <p>Email: admin@rssehatmedika.com</p>
               <p>Password: admin123456</p>
               <button
                 type="button"
                 onClick={fillDemoCredentials}
-                className="mt-3 rounded-lg bg-white px-3 py-2 text-xs font-bold text-[#0b4f8a] shadow-sm ring-1 ring-gray-200 hover:bg-blue-50"
+                className="mt-3 rounded-full bg-white px-4 py-2 text-xs font-bold text-[#174a7e] shadow-sm ring-1 ring-gray-200 hover:bg-blue-50"
               >
                 Isi credential demo
               </button>

@@ -6,16 +6,16 @@ export default function MasterDataPage() {
   const snapshot = getMasterDataSnapshot();
 
   return (
-    <div className="min-h-screen bg-slate-50 p-6 lg:p-8">
-      <div className="mb-6">
-        <p className="text-xs font-bold uppercase tracking-widest text-[#0b4f8a]">Backoffice service preview</p>
-        <h1 className="mt-2 text-3xl font-black text-slate-950">Master data</h1>
-        <p className="mt-2 text-sm text-slate-600">Unit layanan dan katalog tarif dummy untuk fondasi Phase 1.</p>
+    <div className="min-h-screen bg-[#f6f9fc] p-6 lg:p-8">
+      <div className="hospital-grid-surface mb-6 rounded-[28px] p-6 text-white shadow-xl shadow-blue-950/15 lg:p-8">
+        <p className="hospital-pill inline-flex px-4 py-2 text-xs font-bold uppercase tracking-widest">Backoffice service preview</p>
+        <h1 className="mt-5 text-4xl font-black lg:text-5xl">Master <span className="text-emerald-400">data</span></h1>
+        <p className="mt-4 max-w-3xl text-sm leading-6 text-blue-50">Unit layanan dan katalog tarif dummy untuk fondasi Phase 1.</p>
       </div>
 
       <section className="mb-6 grid gap-4 lg:grid-cols-5">
         {snapshot.units.map((unit) => (
-          <div key={unit.code} className="rounded-lg border border-slate-200 bg-white p-4 shadow-sm">
+          <div key={unit.code} className="hospital-card p-4">
             <p className="font-mono text-xs font-bold text-[#0b4f8a]">{unit.code}</p>
             <p className="mt-2 font-black text-slate-950">{unit.name}</p>
             <p className="mt-1 text-sm text-slate-500">{unit.lead}</p>
@@ -29,7 +29,7 @@ export default function MasterDataPage() {
 
       <section className="grid gap-4 xl:grid-cols-2">
         {Object.entries(snapshot.catalogByUnit).map(([unit, items]) => (
-          <div key={unit} className="rounded-lg border border-slate-200 bg-white shadow-sm">
+          <div key={unit} className="hospital-card overflow-hidden">
             <div className="border-b border-slate-100 p-4">
               <h2 className="font-black text-slate-950">{unit}</h2>
             </div>
