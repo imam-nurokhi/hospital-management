@@ -70,7 +70,7 @@ export async function POST(req: NextRequest) {
     });
 
     const hospitalWa = process.env.HOSPITAL_WA || "6221556677";
-    const waText = encodeURIComponent(`Halo RS Sehat Medika, saya ingin konfirmasi janji temu saya:\n\nNama: ${patientName}\nNo. Pendaftaran: ${appointmentNo}\nDepartemen: ${department.name}\nTanggal: ${visitDateFormatted}\nWaktu: ${visitTime}`);
+    const waText = encodeURIComponent(`Halo RS Bisadibicarakan, saya ingin konfirmasi janji temu saya:\n\nNama: ${patientName}\nNo. Pendaftaran: ${appointmentNo}\nDepartemen: ${department.name}\nTanggal: ${visitDateFormatted}\nWaktu: ${visitTime}`);
     const waDeeplink = `https://wa.me/${hospitalWa}?text=${waText}`;
 
     return NextResponse.json({ success: true, appointmentNo, id: appointment.id, waDeeplink }, { status: 201 });

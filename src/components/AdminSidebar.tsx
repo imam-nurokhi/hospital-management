@@ -42,7 +42,7 @@ export default function AdminSidebar() {
               <svg viewBox="0 0 24 24" className="w-5 h-5 fill-white"><path d="M10.5 3h3v4.5H18v3h-4.5V15h-3v-4.5H6v-3h4.5V3z"/></svg>
             </div>
             <div>
-              <p className="font-black text-base leading-tight text-white">RS Sehat Medika</p>
+              <p className="font-black text-base leading-tight text-white">RS Bisadibicarakan</p>
               <p className="text-blue-100/80 text-xs">Kesehatan Terbaik untuk Anda</p>
             </div>
           </div>

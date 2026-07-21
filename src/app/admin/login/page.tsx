@@ -30,7 +30,7 @@ export default function AdminLoginPage() {
   };
 
   const fillDemoCredentials = () => {
-    setForm({ email: "admin@rssehatmedika.com", password: "admin123456" });
+    setForm({ email: "admin@rsbisadibicarakan.com", password: "admin123456" });
     setError("");
   };
 
@@ -45,7 +45,7 @@ export default function AdminLoginPage() {
               </svg>
             </div>
             <div>
-              <h1 className="text-xl font-black">RS Sehat Medika</h1>
+              <h1 className="text-xl font-black">RS Bisadibicarakan</h1>
               <p className="text-sm text-blue-100/80">Kesehatan Terbaik untuk Anda</p>
             </div>
           </div>
@@ -68,7 +68,7 @@ export default function AdminLoginPage() {
                 <path d="M10.5 3h3v4.5H18v3h-4.5V15h-3v-4.5H6v-3h4.5V3z"/>
               </svg>
             </div>
-            <h1 className="text-2xl font-black text-[#1a1a2e]">RS Sehat Medika</h1>
+            <h1 className="text-2xl font-black text-[#1a1a2e]">RS Bisadibicarakan</h1>
             <p className="mt-1 text-sm text-slate-500">Admin Dashboard</p>
           </div>
 
@@ -91,7 +91,7 @@ export default function AdminLoginPage() {
                   value={form.email}
                   onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
                   required
-                  placeholder="admin@rssehatmedika.com"
+                  placeholder="admin@rsbisadibicarakan.com"
                   className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#0b4f8a] focus:border-transparent"
                 />
               </div>
@@ -118,7 +118,7 @@ export default function AdminLoginPage() {
 
             <div className="mt-6 rounded-2xl bg-[#f6f9fc] p-4 text-center text-xs text-gray-500">
               <p className="font-semibold text-gray-700 mb-1">Demo Credentials:</p>
-              <p>Email: admin@rssehatmedika.com</p>
+              <p>Email: admin@rsbisadibicarakan.com</p>
               <p>Password: admin123456</p>
               <button
                 type="button"

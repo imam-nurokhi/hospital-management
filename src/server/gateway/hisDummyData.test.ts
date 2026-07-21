@@ -5,6 +5,7 @@ import {
   getMasterDataSnapshot,
   getModuleShortcuts,
   getPatientRegistry,
+  getPrototypeModuleLandscape,
   getPublicWebsiteFallback,
   getRegistrationQueueSnapshot,
   validateDummyAdminLogin,
@@ -39,8 +40,8 @@ test("master data snapshot groups service catalog by unit", () => {
 });
 
 test("dummy admin login accepts review credentials only", () => {
-  assert.equal(validateDummyAdminLogin("admin@rssehatmedika.com", "admin123456")?.name, "Admin Review");
-  assert.equal(validateDummyAdminLogin("admin@rssehatmedika.com", "wrong"), null);
+  assert.equal(validateDummyAdminLogin("admin@rsbisadibicarakan.com", "admin123456")?.name, "Admin Review");
+  assert.equal(validateDummyAdminLogin("admin@rsbisadibicarakan.com", "wrong"), null);
 });
 
 test("module shortcuts include every phase review target", () => {
@@ -68,4 +69,14 @@ test("public website fallback keeps homepage sections populated without database
   assert.equal(fallback.doctors.length, 4);
   assert.equal(fallback.news.length, 3);
   assert.equal(fallback.stats.doctors, 85);
+});
+
+test("prototype module landscape covers every static prototype module", () => {
+  const landscape = getPrototypeModuleLandscape();
+
+  assert.equal(landscape.length, 8);
+  assert.deepEqual(
+    landscape.map((module) => module.slug),
+    ["dashboard", "core-mcu", "front-office", "inpatient", "billing-finance", "back-office", "internal-integration", "patient-portal"],
+  );
 });

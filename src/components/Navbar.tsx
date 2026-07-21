@@ -33,7 +33,7 @@ export default function Navbar() {
               </svg>
             </div>
             <div className="hidden sm:block">
-              <div className={`font-poppins text-[18px] font-bold leading-tight ${scrolled ? "text-[#174a7e]" : "text-[#1a1a2e]"}`}>RS Sehat Medika</div>
+              <div className={`font-poppins text-[18px] font-bold leading-tight ${scrolled ? "text-[#174a7e]" : "text-[#1a1a2e]"}`}>RS Bisadibicarakan</div>
               <div className={`text-xs font-semibold ${scrolled ? "text-gray-500" : "text-white/45"}`}>Kesehatan Terbaik untuk Anda</div>
             </div>
           </Link>

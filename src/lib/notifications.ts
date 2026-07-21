@@ -47,7 +47,7 @@ function buildPatientEmailHtml(data: {
   <tr><td align="center">
     <table width="600" cellpadding="0" cellspacing="0" style="background:white;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.08);">
       <tr><td style="background:linear-gradient(135deg,#0b4f8a 0%,#1a7cc7 100%);padding:40px 48px;text-align:center;">
-        <h1 style="color:white;margin:0;font-size:28px;font-weight:700;">🏥 RS Sehat Medika</h1>
+        <h1 style="color:white;margin:0;font-size:28px;font-weight:700;">🏥 RS Bisadibicarakan</h1>
         <p style="color:rgba(255,255,255,0.85);margin:8px 0 0;font-size:14px;">Konfirmasi Janji Temu</p>
       </td></tr>
       <tr><td style="background:#ecfdf5;padding:20px 48px;text-align:center;border-bottom:1px solid #d1fae5;">
@@ -210,11 +210,11 @@ export async function sendAppointmentNotifications(appointment: {
   consultationType: string;
   complaint?: string;
 }) {
-  const hospitalName = process.env.HOSPITAL_NAME || "RS Sehat Medika";
+  const hospitalName = process.env.HOSPITAL_NAME || "RS Bisadibicarakan";
   const hospitalPhone = process.env.HOSPITAL_PHONE || "(021) 5566-7788";
   const hospitalAddress = process.env.HOSPITAL_ADDRESS || "Jakarta";
   const hospitalWa = process.env.HOSPITAL_WA || "6221556677";
-  const adminEmail = process.env.EMAIL_ADMIN || "admin@rssehatmedika.com";
+  const adminEmail = process.env.EMAIL_ADMIN || "admin@rsbisadibicarakan.com";
   const waApiKey = process.env.WA_API_KEY || "";
   const waAdminPhone = process.env.WA_ADMIN_PHONE || "";
 

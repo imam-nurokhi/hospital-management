@@ -96,10 +96,22 @@ export type ModuleShortcut = {
   description: string;
 };
 
+export type PrototypeModule = {
+  slug: string;
+  title: string;
+  prototypeFile: string;
+  route: string;
+  icon: string;
+  readiness: "Built" | "Enhanced" | "Queued";
+  summary: string;
+  highlights: string[];
+  metrics: Array<{ label: string; value: string }>;
+};
+
 const dummyAdmin = {
   id: "demo-admin",
   name: "Admin Review",
-  email: "admin@rssehatmedika.com",
+  email: "admin@rsbisadibicarakan.com",
 };
 
 const moduleShortcuts: ModuleShortcut[] = [
@@ -124,6 +136,129 @@ const moduleShortcuts: ModuleShortcut[] = [
   { href: "/admin/messages", label: "Messages", group: "Current App", status: "Preview", description: "Existing contact message page." },
 ];
 
+const prototypeModuleLandscape: PrototypeModule[] = [
+  {
+    slug: "dashboard",
+    title: "Dashboard Eksekutif",
+    prototypeFile: "prototype/index.html",
+    route: "/admin",
+    icon: "D",
+    readiness: "Enhanced",
+    summary: "Command center operasional, klinis, finansial, dan mutu rumah sakit.",
+    highlights: ["KPI pasien harian", "Volume 7 hari", "Alert operasional", "Landscape modul HIS"],
+    metrics: [
+      { label: "Pasien hari ini", value: "128" },
+      { label: "MCU aktif", value: "73" },
+      { label: "Revenue", value: "186jt" },
+    ],
+  },
+  {
+    slug: "core-mcu",
+    title: "Core Medical Check-Up",
+    prototypeFile: "prototype/core-mcu.html",
+    route: "/admin/modules?module=mcu",
+    icon: "+",
+    readiness: "Queued",
+    summary: "Booking, paket, station task, hasil, review dokter, dan report release.",
+    highlights: ["Package builder", "Station board", "Doctor review", "PDF result release"],
+    metrics: [
+      { label: "Kasus aktif", value: "73" },
+      { label: "SLA", value: "86%" },
+      { label: "Overdue", value: "6" },
+    ],
+  },
+  {
+    slug: "front-office",
+    title: "Front Office RJ & IGD",
+    prototypeFile: "prototype/front-office.html",
+    route: "/admin/registration",
+    icon: "FO",
+    readiness: "Built",
+    summary: "Registrasi, check-in, antrean, poliklinik, IGD, e-order, dan routing pasien.",
+    highlights: ["Duplicate warning", "Check-in", "Queue display", "Clinical worklist routing"],
+    metrics: [
+      { label: "Booking", value: "42" },
+      { label: "Check-in", value: "31" },
+      { label: "IGD aktif", value: "3" },
+    ],
+  },
+  {
+    slug: "inpatient",
+    title: "Rawat Inap",
+    prototypeFile: "prototype/inpatient.html",
+    route: "/admin/modules?module=inpatient",
+    icon: "RI",
+    readiness: "Queued",
+    summary: "Admission, bed monitoring, ward operations, transfer, discharge, dan surgery handoff.",
+    highlights: ["Bed grid", "Admission flow", "Transfer/discharge", "Room charge trigger"],
+    metrics: [
+      { label: "Bed occupied", value: "78%" },
+      { label: "Cleaning", value: "6" },
+      { label: "Discharge", value: "9" },
+    ],
+  },
+  {
+    slug: "billing-finance",
+    title: "Billing & Keuangan",
+    prototypeFile: "prototype/billing-finance.html",
+    route: "/admin/modules?module=billing",
+    icon: "Rp",
+    readiness: "Queued",
+    summary: "Invoice, pembayaran, corporate AR, refund, treasury, dan jasa medis.",
+    highlights: ["Cashier payment", "Invoice detail", "AR aging", "Doctor fee dashboard"],
+    metrics: [
+      { label: "Pendapatan", value: "186jt" },
+      { label: "AR open", value: "42" },
+      { label: "Refund", value: "3" },
+    ],
+  },
+  {
+    slug: "back-office",
+    title: "Back Office",
+    prototypeFile: "prototype/back-office.html",
+    route: "/admin/master-data",
+    icon: "BO",
+    readiness: "Enhanced",
+    summary: "Inventory, aset, HRD, mutu, master data, reporting, dan user access.",
+    highlights: ["Service catalog", "Inventory warning", "Asset registry", "User access"],
+    metrics: [
+      { label: "Unit aktif", value: "5" },
+      { label: "Katalog", value: "11" },
+      { label: "Completion", value: "84%" },
+    ],
+  },
+  {
+    slug: "internal-integration",
+    title: "Integrasi Internal",
+    prototypeFile: "prototype/internal-integration.html",
+    route: "/admin/modules?module=kiosk",
+    icon: "IN",
+    readiness: "Queued",
+    summary: "EMR, portal, kiosk, display antrean, bed monitor, notifikasi, dan EIS.",
+    highlights: ["SSE/WebSocket display", "Kiosk check-in", "Notification feed", "EIS dashboard"],
+    metrics: [
+      { label: "Feed aktif", value: "4" },
+      { label: "Display", value: "6" },
+      { label: "Latency", value: "<1s" },
+    ],
+  },
+  {
+    slug: "patient-portal",
+    title: "Portal Pasien",
+    prototypeFile: "prototype/patient-portal.html",
+    route: "/admin/modules?module=patient-portal",
+    icon: "P",
+    readiness: "Queued",
+    summary: "Portal pendukung untuk booking, hasil MCU, riwayat pembayaran, dan notifikasi pasien.",
+    highlights: ["Appointment self-service", "Result access", "Secure release", "Patient notifications"],
+    metrics: [
+      { label: "Booking", value: "24" },
+      { label: "Result ready", value: "18" },
+      { label: "Unread", value: "7" },
+    ],
+  },
+];
+
 const roles: Role[] = [
   { name: "Super Admin", users: 2, permissions: ["identity:*", "audit:read", "master-data:*"] },
   { name: "Front Office", users: 5, permissions: ["patient:write", "appointment:write", "queue:write"] },
@@ -134,10 +269,10 @@ const roles: Role[] = [
 ];
 
 const users: User[] = [
-  { id: "USR-001", name: "Alya Paramitha", email: "alya@rssehat.local", role: "Super Admin", status: "Aktif", lastSeen: "21 Jul 2026, 09:12" },
-  { id: "USR-014", name: "Bima Radiansyah", email: "bima.fo@rssehat.local", role: "Front Office", status: "Aktif", lastSeen: "21 Jul 2026, 08:44" },
-  { id: "USR-022", name: "Citra Lestari", email: "citra.mcu@rssehat.local", role: "MCU Coordinator", status: "Aktif", lastSeen: "20 Jul 2026, 17:30" },
-  { id: "USR-031", name: "dr. Damar Wicaksono", email: "damar.dr@rssehat.local", role: "Dokter", status: "Undangan", lastSeen: "Belum masuk" },
+  { id: "USR-001", name: "Alya Paramitha", email: "alya@rsbisadibicarakan.local", role: "Super Admin", status: "Aktif", lastSeen: "21 Jul 2026, 09:12" },
+  { id: "USR-014", name: "Bima Radiansyah", email: "bima.fo@rsbisadibicarakan.local", role: "Front Office", status: "Aktif", lastSeen: "21 Jul 2026, 08:44" },
+  { id: "USR-022", name: "Citra Lestari", email: "citra.mcu@rsbisadibicarakan.local", role: "MCU Coordinator", status: "Aktif", lastSeen: "20 Jul 2026, 17:30" },
+  { id: "USR-031", name: "dr. Damar Wicaksono", email: "damar.dr@rsbisadibicarakan.local", role: "Dokter", status: "Undangan", lastSeen: "Belum masuk" },
 ];
 
 const units: Unit[] = [
@@ -194,6 +329,10 @@ export function validateDummyAdminLogin(email: string, password: string) {
 
 export function getModuleShortcuts() {
   return moduleShortcuts;
+}
+
+export function getPrototypeModuleLandscape() {
+  return prototypeModuleLandscape;
 }
 
 export function getFoundationDashboard() {

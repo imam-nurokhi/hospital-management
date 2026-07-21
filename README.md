@@ -1,4 +1,4 @@
-# RS Sehat Medika – Hospital Management System
+# RS Bisadibicarakan – Hospital Management System
 
 A full-stack hospital website built with Next.js 16, TypeScript, PostgreSQL, and Prisma. Features online appointment booking with WhatsApp and Email notifications.
 
@@ -73,7 +73,7 @@ Visit http://localhost:3000
 
 | Role | Email | Password |
 |------|-------|----------|
-| Admin | admin@rssehatmedika.com | admin123456 |
+| Admin | admin@rsbisadibicarakan.com | admin123456 |
 
 ## 📁 Project Structure
 

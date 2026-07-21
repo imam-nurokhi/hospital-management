@@ -233,7 +233,7 @@ function AboutSection() {
               Rumah Sakit Pilihan Keluarga Indonesia
             </h2>
             <p className="text-gray-600 leading-relaxed mb-6">
-              RS Sehat Medika berdiri sejak tahun 2004 dan telah melayani lebih dari 15.000 pasien dengan dedikasi penuh. Kami berkomitmen memberikan pelayanan kesehatan berkualitas tinggi yang terjangkau bagi seluruh lapisan masyarakat.
+              RS Bisadibicarakan berdiri sejak tahun 2004 dan telah melayani lebih dari 15.000 pasien dengan dedikasi penuh. Kami berkomitmen memberikan pelayanan kesehatan berkualitas tinggi yang terjangkau bagi seluruh lapisan masyarakat.
             </p>
             <p className="text-gray-600 leading-relaxed mb-8">
               Dengan lebih dari 50 dokter spesialis berpengalaman, teknologi medis terkini, dan fasilitas rawat inap yang nyaman, kami siap mendampingi perjalanan kesehatan Anda dan keluarga.
@@ -566,7 +566,7 @@ function ContactSection() {
               {[
                 { icon: "📍", title: "Alamat", info: "Jl. Kesehatan No. 1, Jakarta Selatan 12130" },
                 { icon: "📞", title: "Telepon", info: "(021) 5566-7788 | IGD: (021) 5566-7799" },
-                { icon: "✉️", title: "Email", info: "info@rssehatmedika.com" },
+                { icon: "✉️", title: "Email", info: "info@rsbisadibicarakan.com" },
                 { icon: "🕐", title: "Jam Operasional", info: "Senin–Sabtu: 07:00–21:00 | IGD: 24 Jam" },
               ].map(item => (
                 <div key={item.title} className="flex gap-4">
@@ -640,7 +640,7 @@ function Footer() {
                 <svg viewBox="0 0 24 24" className="w-6 h-6 fill-white"><path d="M10.5 3h3v4.5H18v3h-4.5V15h-3v-4.5H6v-3h4.5V3z"/></svg>
               </div>
               <div>
-                <div className="font-bold text-base font-poppins">RS Sehat Medika</div>
+                <div className="font-bold text-base font-poppins">RS Bisadibicarakan</div>
                 <div className="text-gray-400 text-xs">Kesehatan Terbaik untuk Anda</div>
               </div>
             </div>
@@ -670,7 +670,7 @@ function Footer() {
             <ul className="space-y-3 text-sm text-gray-400">
               <li>📍 Jl. Kesehatan No. 1, Jakarta Selatan</li>
               <li>📞 (021) 5566-7788</li>
-              <li>✉️ info@rssehatmedika.com</li>
+              <li>✉️ info@rsbisadibicarakan.com</li>
               <li>🕐 Senin–Sabtu: 07:00–21:00</li>
               <li>🚨 IGD: 24 Jam</li>
             </ul>
@@ -678,7 +678,7 @@ function Footer() {
         </div>
 
         <div className="border-t border-gray-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-400">
-          <p>© 2024 RS Sehat Medika. All rights reserved.</p>
+          <p>© 2024 RS Bisadibicarakan. All rights reserved.</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-white">Kebijakan Privasi</a>
             <a href="#" className="hover:text-white">Syarat & Ketentuan</a>
