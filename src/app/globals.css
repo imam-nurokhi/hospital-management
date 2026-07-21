@@ -5,8 +5,8 @@
   --primary-light: #1a7cc7;
   --accent: #10b981;
   --danger: #ef4444;
-  --font-inter: "Inter", sans-serif;
-  --font-poppins: "Poppins", sans-serif;
+  --font-inter: Arial, Helvetica, sans-serif;
+  --font-poppins: Arial, Helvetica, sans-serif;
 }
 
 * {
