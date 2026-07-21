@@ -23,18 +23,18 @@ export default function Navbar() {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-white/95 shadow-lg backdrop-blur-xl" : "bg-transparent"}`}>
-      <div className="mx-auto max-w-[1680px] px-5 sm:px-8 lg:px-12 xl:px-20">
-        <div className="flex items-center justify-between h-20 lg:h-28">
+      <div className="live-nav-inner">
+        <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3">
-            <div className={`flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-2xl shadow-lg transition-colors ${scrolled ? "bg-[#174a7e]" : "bg-[#1a7cc7]"}`}>
-              <svg viewBox="0 0 24 24" className="w-6 h-6 fill-white">
+            <div className={`flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl shadow-lg transition-colors ${scrolled ? "bg-[#174a7e]" : "bg-[#1a7cc7]"}`}>
+              <svg viewBox="0 0 24 24" className="h-6 w-6 fill-white">
                 <path d="M10.5 3h3v4.5H18v3h-4.5V15h-3v-4.5H6v-3h4.5V3z"/>
               </svg>
             </div>
             <div className="hidden sm:block">
-              <div className={`font-black text-xl leading-tight font-poppins ${scrolled ? "text-[#174a7e]" : "text-[#1a1a2e]"}`}>RS Sehat Medika</div>
-              <div className={`text-sm font-semibold ${scrolled ? "text-gray-500" : "text-white/45"}`}>Kesehatan Terbaik untuk Anda</div>
+              <div className={`font-poppins text-[18px] font-bold leading-tight ${scrolled ? "text-[#174a7e]" : "text-[#1a1a2e]"}`}>RS Sehat Medika</div>
+              <div className={`text-xs font-semibold ${scrolled ? "text-gray-500" : "text-white/45"}`}>Kesehatan Terbaik untuk Anda</div>
             </div>
           </Link>
 
@@ -42,7 +42,7 @@ export default function Navbar() {
           <ul className="hidden lg:flex items-center gap-1">
             {links.map(l => (
               <li key={l.href}>
-                <a href={l.href} className={`px-5 py-3 rounded-full text-lg font-bold transition-colors hover:bg-white/10 ${scrolled ? "text-gray-700 hover:text-[#174a7e]" : "text-white/90 hover:text-white"}`}>
+                <a href={l.href} className={`rounded-full px-[14px] py-2 text-[15px] font-semibold transition-colors hover:bg-white/10 ${scrolled ? "text-gray-700 hover:text-[#174a7e]" : "text-white/90 hover:text-white"}`}>
                   {l.label}
                 </a>
               </li>
@@ -51,7 +51,7 @@ export default function Navbar() {
 
           {/* CTA + Hamburger */}
           <div className="flex items-center gap-3">
-            <a href="#appointment" className="hospital-cta hidden items-center gap-3 rounded-full px-8 py-5 text-lg font-black transition-colors sm:flex">
+            <a href="#appointment" className="hospital-cta hidden items-center gap-3 rounded-full px-7 py-[13px] text-[15px] font-semibold transition-colors sm:flex">
               <svg viewBox="0 0 24 24" className="w-4 h-4 fill-white"><path d="M8 2v2H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-2V2h-2v2h-4V2H8zm-2 6h12v10H6V8zm5 2v3H8v2h3v3h2v-3h3v-2h-3v-3h-2z"/></svg>
               Buat Janji
             </a>

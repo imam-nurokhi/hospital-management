@@ -64,76 +64,75 @@ function HeroSection() {
       <div className="absolute left-[24%] top-[38%] h-72 w-72 rounded-full bg-white/8" />
       <div className="absolute -bottom-36 -left-20 h-[34rem] w-[34rem] rounded-full bg-white/8" />
 
-      <div className="relative mx-auto w-full max-w-[1680px] px-5 pb-16 pt-36 sm:px-8 lg:px-12 lg:pt-44 xl:px-20">
-        <div className="grid items-center gap-12 lg:grid-cols-[0.94fr_1.06fr]">
-          <div className="max-w-3xl">
-            <div className="hospital-pill mb-10 inline-flex items-center gap-3 px-6 py-3 text-base font-black tracking-wide">
-              <span className="h-3 w-3 rounded-full bg-emerald-400"></span>
+      <div className="live-hero-inner relative">
+          <div className="live-hero-copy">
+            <div className="hospital-pill mb-[38px] inline-flex items-center gap-2 px-5 py-2.5 text-[15px] font-semibold tracking-wide">
+              <span className="h-2.5 w-2.5 rounded-full bg-emerald-400"></span>
               Layanan Kesehatan 24/7
             </div>
-            <h1 className="font-poppins mb-8 text-6xl font-black leading-[1.08] text-white sm:text-7xl xl:text-[5.6rem]">
+            <h1 className="live-hero-title">
               Rumah Sakit<br />
-              <span className="relative inline-block text-emerald-400 after:absolute after:-bottom-2 after:left-0 after:h-1 after:w-full after:rounded-full after:bg-emerald-500">Inovat</span><br />
-              untuk Keluarga<br />
+              <span className="live-hero-title-accent">Modern</span><br />
+              untuk Keluarga
               Anda
             </h1>
-            <p className="mb-12 max-w-2xl text-xl font-semibold leading-9 text-blue-50/85">
+            <p>
               Kami hadir dengan teknologi medis terkini, dokter spesialis berpengalaman, dan layanan kesehatan komprehensif untuk menjaga kesehatan Anda dan keluarga.
             </p>
-            <div className="flex flex-wrap gap-5">
-              <a href="#appointment" className="hospital-cta inline-flex items-center gap-3 rounded-full px-9 py-5 text-lg font-black transition-all duration-300 hover:-translate-y-0.5">
+            <div className="live-hero-actions">
+              <a href="#appointment" className="hospital-cta live-hero-button transition-all duration-300 hover:-translate-y-0.5">
                 <svg viewBox="0 0 24 24" className="w-5 h-5 fill-white"><path d="M8 2v2H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-2V2h-2v2h-4V2H8zm-2 6h12v10H6V8zm5 2v3H8v2h3v3h2v-3h3v-2h-3v-3h-2z"/></svg>
                 Buat Janji Sekarang
               </a>
-              <a href="#services" className="inline-flex items-center gap-3 rounded-full bg-white px-9 py-5 text-lg font-black text-[#174a7e] shadow-xl shadow-blue-950/20 transition-all duration-300 hover:-translate-y-0.5">
+              <a href="#services" className="live-hero-button bg-white text-[#0b4f8a] shadow-xl shadow-blue-950/20 transition-all duration-300 hover:-translate-y-0.5">
                 <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#174a7e] text-xs text-white">▶</span>
                 Lihat Layanan
               </a>
             </div>
 
-            <div className="mt-16 flex flex-wrap gap-12">
+            <div className="live-hero-stats">
               {[
                 { value: "15,000+", label: "Pasien Terlayani" },
                 { value: "85+", label: "Dokter Spesialis" },
                 { value: "20+", label: "Tahun Berpengalaman" },
               ].map(s => (
                 <div key={s.label}>
-                  <div className="font-poppins text-4xl font-black text-emerald-400">{s.value}</div>
-                  <div className="mt-2 text-base font-semibold text-blue-100/75">{s.label}</div>
+                  <div className="live-hero-stat-value">{s.value}</div>
+                  <div className="mt-1 text-sm text-blue-100/75">{s.label}</div>
                 </div>
               ))}
             </div>
           </div>
 
           <div className="relative hidden min-h-[520px] lg:block">
-            <div className="absolute right-0 top-20 w-[640px] rounded-[28px] bg-white p-10 shadow-2xl shadow-blue-950/25">
+            <div className="live-patient-card">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-5">
-                  <div className="flex h-20 w-20 items-center justify-center rounded-full bg-[#1a7cc7]">
-                    <svg viewBox="0 0 24 24" className="h-10 w-10 fill-white"><path d="M12 12a4 4 0 100-8 4 4 0 000 8zm0 2c-4.42 0-8 2.24-8 5v1h16v-1c0-2.76-3.58-5-8-5z"/></svg>
+                  <div className="flex h-[56px] w-[56px] items-center justify-center rounded-full bg-[#1a7cc7]">
+                    <svg viewBox="0 0 24 24" className="h-7 w-7 fill-white"><path d="M12 12a4 4 0 100-8 4 4 0 000 8zm0 2c-4.42 0-8 2.24-8 5v1h16v-1c0-2.76-3.58-5-8-5z"/></svg>
                   </div>
                   <div>
-                    <h3 className="text-2xl font-black text-[#1a1a2e]">Dashboard Pasien</h3>
-                    <p className="mt-2 text-lg font-semibold text-slate-500">Manajemen Kesehatan Digital</p>
+                    <h3 className="text-[20px] font-bold text-[#1a1a2e]">Dashboard Pasien</h3>
+                    <p className="mt-1 text-[15px] text-slate-500">Manajemen Kesehatan Digital</p>
                   </div>
                 </div>
-                <span className="rounded-full bg-emerald-50 px-6 py-3 text-base font-black text-emerald-600">Online</span>
+                <span className="rounded-full bg-emerald-50 px-5 py-2 text-[14px] font-semibold text-emerald-600">Online</span>
               </div>
-              <div className="my-8 h-px bg-slate-200" />
-              <div className="space-y-5">
+              <div className="my-6 h-px bg-slate-200" />
+              <div className="space-y-3">
                 {[
                   { label: "Janji Temu", title: "Dr. Siti Rahayu – Jantung", status: "Hari Ini", tone: "bg-blue-50 text-[#174a7e]" },
                   { label: "Hasil Laboratorium", title: "Pemeriksaan Darah Lengkap", status: "Siap", tone: "bg-emerald-50 text-emerald-700" },
                   { label: "Konsultasi Online", title: "Dr. Ahmad Fauzi – Umum", status: "15 mnt", tone: "bg-orange-50 text-orange-600" },
                 ].map((item) => (
-                  <div key={item.label} className="flex items-center justify-between rounded-2xl bg-slate-50 p-5">
+                  <div key={item.label} className="flex items-center justify-between rounded-2xl bg-slate-50 p-3">
                     <div className="flex items-center gap-4">
-                      <div className={`flex h-12 w-12 items-center justify-center rounded-xl ${item.tone}`}>
+                      <div className={`flex h-10 w-10 items-center justify-center rounded-xl ${item.tone}`}>
                         <span className="h-4 w-4 rounded-sm bg-current" />
                       </div>
                       <div>
-                        <p className="text-base font-semibold text-slate-500">{item.label}</p>
-                        <p className="mt-1 text-lg font-black text-[#1a1a2e]">{item.title}</p>
+                        <p className="text-[14px] text-slate-500">{item.label}</p>
+                        <p className="mt-1 text-[15px] font-bold text-[#1a1a2e]">{item.title}</p>
                       </div>
                     </div>
                     <span className={`rounded-full px-4 py-2 text-sm font-black ${item.tone}`}>{item.status}</span>
@@ -142,19 +141,19 @@ function HeroSection() {
               </div>
             </div>
 
-            <div className="absolute right-0 top-8 rounded-3xl bg-white p-5 shadow-2xl shadow-blue-950/20">
+            <div className="absolute right-[-28px] top-[-20px] rounded-2xl bg-white p-5 shadow-2xl shadow-blue-950/20">
               <div className="flex items-center gap-4">
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-50 text-emerald-600">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-50 text-emerald-600">
                   <span className="h-4 w-4 rounded-full bg-current" />
                 </div>
                 <div>
-                  <p className="text-2xl font-black text-[#1a1a2e]">98.6%</p>
-                  <p className="text-base font-semibold text-slate-500">Tingkat Kepuasan</p>
+                  <p className="text-[20px] font-bold text-[#1a1a2e]">98.6%</p>
+                  <p className="text-[14px] text-slate-500">Tingkat Kepuasan</p>
                 </div>
               </div>
             </div>
 
-            <div className="absolute bottom-2 left-12 rounded-3xl bg-white p-5 shadow-2xl shadow-blue-950/20">
+            <div className="absolute bottom-[10px] left-[-22px] rounded-2xl bg-white p-5 shadow-2xl shadow-blue-950/20">
               <div className="flex items-center gap-4">
                 <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-50 text-[#174a7e]">
                   <span className="h-4 w-4 rounded-full bg-current" />
@@ -166,7 +165,6 @@ function HeroSection() {
               </div>
             </div>
           </div>
-        </div>
       </div>
     </section>
   );
