@@ -9,6 +9,8 @@ const navItems = [
   { href: "/admin/master-data", label: "Master Data", icon: "▤" },
   { href: "/admin/modules", label: "Semua Modul", icon: "▧" },
   { href: "/admin/appointments", label: "Janji Temu", icon: "📅" },
+  { href: "/admin/registration", label: "Registrasi", icon: "▣" },
+  { href: "/admin/queue", label: "Queue", icon: "◉" },
   { href: "/admin/patients", label: "Pasien", icon: "👥" },
   { href: "/admin/doctors", label: "Dokter", icon: "👨‍⚕️" },
   { href: "/admin/messages", label: "Pesan", icon: "✉️" },

@@ -48,6 +48,24 @@ type Patient = {
   tags: string[];
 };
 
+type Registration = {
+  id: string;
+  patientName: string;
+  mrn: string;
+  channel: "Walk-in" | "Online" | "Corporate";
+  destination: string;
+  status: "Draft" | "Verified" | "Checked-in";
+  time: string;
+};
+
+type QueueDisplay = {
+  station: string;
+  current: string;
+  next: string;
+  waiting: number;
+  color: string;
+};
+
 export type ModuleShortcut = {
   href: string;
   label: string;
@@ -68,8 +86,8 @@ const moduleShortcuts: ModuleShortcut[] = [
   { href: "/admin/master-data", label: "Master Data", group: "Foundation", status: "Ready", description: "Service units and catalog." },
   { href: "/admin/patients", label: "Patient Registry", group: "Foundation", status: "Ready", description: "Dummy duplicate checker." },
   { href: "/admin/appointments", label: "Appointments", group: "Phase 2", status: "Preview", description: "Existing appointment management." },
-  { href: "/admin/modules?module=registration", label: "Registration", group: "Phase 2", status: "Planned", description: "Front-office registration flow." },
-  { href: "/admin/modules?module=queue", label: "Queue", group: "Phase 2", status: "Planned", description: "Queue dashboard and display." },
+  { href: "/admin/registration", label: "Registration", group: "Phase 2", status: "Ready", description: "Front-office registration flow." },
+  { href: "/admin/queue", label: "Queue", group: "Phase 2", status: "Ready", description: "Queue dashboard and display." },
   { href: "/admin/modules?module=mcu", label: "MCU", group: "Phase 3", status: "Planned", description: "Packages, registration, cases, station board." },
   { href: "/admin/modules?module=clinical", label: "Clinical EMR", group: "Phase 4", status: "Planned", description: "Nurse station, doctor worklist, EMR timeline." },
   { href: "/admin/modules?module=laboratory", label: "Laboratory", group: "Phase 4", status: "Planned", description: "Worklist, result entry, verification." },
@@ -130,6 +148,20 @@ const patients: Patient[] = [
   { mrn: "RM-2607-0005", name: "Putri Amelia", birthDate: "2000-12-12", phone: "0856-1100-8842", lastVisit: "17 Jul 2026", risk: "Normal", tags: ["Korporat"] },
 ];
 
+const registrations: Registration[] = [
+  { id: "REG-2607-001", patientName: "Nadia Prameswari", mrn: "RM-2607-0001", channel: "Online", destination: "MCU Basic", status: "Verified", time: "08:10" },
+  { id: "REG-2607-002", patientName: "Rafi Mahendra", mrn: "RM-2607-0002", channel: "Walk-in", destination: "Kardiologi", status: "Checked-in", time: "08:24" },
+  { id: "REG-2607-003", patientName: "Saras Kirana", mrn: "RM-2607-0003", channel: "Corporate", destination: "MCU Korporat", status: "Draft", time: "08:42" },
+  { id: "REG-2607-004", patientName: "Hendra Wijaya", mrn: "RM-2607-0004", channel: "Walk-in", destination: "Laboratorium", status: "Verified", time: "09:05" },
+];
+
+const queueDisplays: QueueDisplay[] = [
+  { station: "Front Office 1", current: "A-014", next: "A-015", waiting: 3, color: "bg-blue-50 text-[#174a7e]" },
+  { station: "MCU Station", current: "M-008", next: "M-009", waiting: 4, color: "bg-emerald-50 text-emerald-700" },
+  { station: "Laboratorium", current: "L-021", next: "L-022", waiting: 2, color: "bg-indigo-50 text-indigo-700" },
+  { station: "Kasir", current: "K-006", next: "K-007", waiting: 0, color: "bg-orange-50 text-orange-700" },
+];
+
 export function validateDummyAdminLogin(email: string, password: string) {
   if (email.toLowerCase() === dummyAdmin.email && password === "admin123456") {
     return dummyAdmin;
@@ -186,5 +218,18 @@ export function getPatientRegistry() {
         patientName: patient.name,
         reason: patient.tags.join(", "),
       })),
+  };
+}
+
+export function getRegistrationQueueSnapshot() {
+  return {
+    registrations,
+    queueDisplays,
+    queueCounters: {
+      waiting: queueDisplays.reduce((sum, item) => sum + item.waiting, 0),
+      serving: queueDisplays.length + 1,
+      checkedIn: registrations.filter((item) => item.status === "Checked-in").length,
+      verified: registrations.filter((item) => item.status === "Verified").length,
+    },
   };
 }

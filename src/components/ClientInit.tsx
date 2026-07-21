@@ -4,15 +4,19 @@ import { useEffect } from "react";
 export default function ClientInit() {
   useEffect(() => {
     // Hide loading screen
-    const loadingScreen = document.getElementById("loading-screen");
-    if (loadingScreen) {
-      setTimeout(() => {
+    let hideTimer: ReturnType<typeof setTimeout> | undefined;
+    let removeTimer: ReturnType<typeof setTimeout> | undefined;
+    const hideLoadingScreen = () => {
+      const loadingScreen = document.getElementById("loading-screen");
+      if (!loadingScreen) return;
+      hideTimer = setTimeout(() => {
         loadingScreen.classList.add("hidden");
-        setTimeout(() => {
+        removeTimer = setTimeout(() => {
           loadingScreen.style.display = "none";
         }, 500);
       }, 1500);
-    }
+    };
+    hideLoadingScreen();
 
     // Scroll to top button visibility
     const scrollBtn = document.getElementById("scrollTopBtn");
@@ -62,6 +66,8 @@ export default function ClientInit() {
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      if (hideTimer) clearTimeout(hideTimer);
+      if (removeTimer) clearTimeout(removeTimer);
       observer.disconnect();
     };
   }, []);

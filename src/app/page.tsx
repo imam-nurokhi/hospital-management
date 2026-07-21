@@ -7,6 +7,7 @@ export default function HomePage() {
   return (
     <>
       <Navbar />
+      <LoadingScreen />
       <ClientInit />
       <HeroSection />
       <QuickAccessSection />
@@ -20,7 +21,6 @@ export default function HomePage() {
       <NewsSection />
       <ContactSection />
       <Footer />
-      <LoadingScreen />
       <ScrollToTop />
     </>
   );
@@ -59,109 +59,114 @@ function ScrollToTop() {
 
 function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden" style={{ background: "linear-gradient(135deg, #0b4f8a 0%, #1a7cc7 50%, #0e6bab 100%)" }}>
+    <section className="hospital-grid-surface relative flex min-h-screen items-center overflow-hidden">
       <canvas id="particle-canvas" className="absolute inset-0 w-full h-full pointer-events-none" />
-      
-      {/* Decorative shapes */}
-      <div className="absolute top-20 right-10 w-64 h-64 bg-white/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 left-10 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
-      
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 lg:py-40">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-semibold mb-6 border border-white/30">
-              <span className="w-2 h-2 bg-[#10b981] rounded-full animate-pulse"></span>
-              Tersedia 24 Jam Setiap Hari
+      <div className="absolute left-[24%] top-[38%] h-72 w-72 rounded-full bg-white/8" />
+      <div className="absolute -bottom-36 -left-20 h-[34rem] w-[34rem] rounded-full bg-white/8" />
+
+      <div className="relative mx-auto w-full max-w-[1680px] px-5 pb-16 pt-36 sm:px-8 lg:px-12 lg:pt-44 xl:px-20">
+        <div className="grid items-center gap-12 lg:grid-cols-[0.94fr_1.06fr]">
+          <div className="max-w-3xl">
+            <div className="hospital-pill mb-10 inline-flex items-center gap-3 px-6 py-3 text-base font-black tracking-wide">
+              <span className="h-3 w-3 rounded-full bg-emerald-400"></span>
+              Layanan Kesehatan 24/7
             </div>
-            <h1 className="font-poppins text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
-              Kesehatan Terbaik<br />
-              <span className="text-[#10b981]">Untuk</span>{" "}
-              <span className="text-[#10b981]">Keluarga</span><br />
+            <h1 className="font-poppins mb-8 text-6xl font-black leading-[1.08] text-white sm:text-7xl xl:text-[5.6rem]">
+              Rumah Sakit<br />
+              <span className="relative inline-block text-emerald-400 after:absolute after:-bottom-2 after:left-0 after:h-1 after:w-full after:rounded-full after:bg-emerald-500">Inovat</span><br />
+              untuk Keluarga<br />
               Anda
             </h1>
-            <p className="text-blue-100 text-lg leading-relaxed mb-8 max-w-lg">
-              RS Sehat Medika hadir dengan fasilitas modern, dokter spesialis berpengalaman, dan pelayanan penuh kasih untuk menjaga kesehatan seluruh keluarga Anda.
+            <p className="mb-12 max-w-2xl text-xl font-semibold leading-9 text-blue-50/85">
+              Kami hadir dengan teknologi medis terkini, dokter spesialis berpengalaman, dan layanan kesehatan komprehensif untuk menjaga kesehatan Anda dan keluarga.
             </p>
-            <div className="flex flex-wrap gap-4">
-              <a href="#appointment" className="inline-flex items-center gap-2 bg-[#10b981] hover:bg-emerald-600 text-white px-8 py-4 rounded-xl font-bold text-base transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5">
+            <div className="flex flex-wrap gap-5">
+              <a href="#appointment" className="hospital-cta inline-flex items-center gap-3 rounded-full px-9 py-5 text-lg font-black transition-all duration-300 hover:-translate-y-0.5">
                 <svg viewBox="0 0 24 24" className="w-5 h-5 fill-white"><path d="M8 2v2H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-2V2h-2v2h-4V2H8zm-2 6h12v10H6V8zm5 2v3H8v2h3v3h2v-3h3v-2h-3v-3h-2z"/></svg>
-                Buat Janji Temu
+                Buat Janji Sekarang
               </a>
-              <a href="#doctors" className="inline-flex items-center gap-2 bg-white/20 hover:bg-white/30 text-white border border-white/40 px-8 py-4 rounded-xl font-bold text-base transition-all duration-300 backdrop-blur-sm">
-                <svg viewBox="0 0 24 24" className="w-5 h-5 fill-white"><path d="M12 2a5 5 0 110 10A5 5 0 0112 2zm0 12c5.33 0 8 2.67 8 4v2H4v-2c0-1.33 2.67-4 8-4z"/></svg>
-                Cari Dokter
+              <a href="#services" className="inline-flex items-center gap-3 rounded-full bg-white px-9 py-5 text-lg font-black text-[#174a7e] shadow-xl shadow-blue-950/20 transition-all duration-300 hover:-translate-y-0.5">
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#174a7e] text-xs text-white">▶</span>
+                Lihat Layanan
               </a>
             </div>
 
-            {/* Quick stats */}
-            <div className="flex flex-wrap gap-6 mt-10">
+            <div className="mt-16 flex flex-wrap gap-12">
               {[
-                { value: "15K+", label: "Pasien Tertangani" },
-                { value: "50+", label: "Dokter Spesialis" },
-                { value: "24/7", label: "Layanan Darurat" },
+                { value: "15,000+", label: "Pasien Terlayani" },
+                { value: "85+", label: "Dokter Spesialis" },
+                { value: "20+", label: "Tahun Berpengalaman" },
               ].map(s => (
-                <div key={s.label} className="text-center">
-                  <div className="text-2xl font-bold text-white font-poppins">{s.value}</div>
-                  <div className="text-blue-200 text-xs">{s.label}</div>
+                <div key={s.label}>
+                  <div className="font-poppins text-4xl font-black text-emerald-400">{s.value}</div>
+                  <div className="mt-2 text-base font-semibold text-blue-100/75">{s.label}</div>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Right side: Floating cards */}
-          <div className="hidden lg:flex flex-col gap-4 items-end">
-            <div className="bg-white/15 backdrop-blur-md border border-white/20 rounded-2xl p-5 w-72 animate-float">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 bg-red-500/30 rounded-xl flex items-center justify-center">
-                  <span className="text-xl">🚨</span>
+          <div className="relative hidden min-h-[520px] lg:block">
+            <div className="absolute right-0 top-20 w-[640px] rounded-[28px] bg-white p-10 shadow-2xl shadow-blue-950/25">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-5">
+                  <div className="flex h-20 w-20 items-center justify-center rounded-full bg-[#1a7cc7]">
+                    <svg viewBox="0 0 24 24" className="h-10 w-10 fill-white"><path d="M12 12a4 4 0 100-8 4 4 0 000 8zm0 2c-4.42 0-8 2.24-8 5v1h16v-1c0-2.76-3.58-5-8-5z"/></svg>
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-black text-[#1a1a2e]">Dashboard Pasien</h3>
+                    <p className="mt-2 text-lg font-semibold text-slate-500">Manajemen Kesehatan Digital</p>
+                  </div>
                 </div>
-                <div>
-                  <p className="text-white font-bold text-sm">IGD 24 Jam</p>
-                  <p className="text-blue-200 text-xs">Siap Melayani Darurat</p>
-                </div>
+                <span className="rounded-full bg-emerald-50 px-6 py-3 text-base font-black text-emerald-600">Online</span>
               </div>
-              <div className="text-2xl font-bold text-white font-poppins">(021) 5566-7788</div>
-              <p className="text-blue-200 text-xs mt-1">Hubungi kami segera</p>
-            </div>
-
-            <div className="bg-white/15 backdrop-blur-md border border-white/20 rounded-2xl p-5 w-64 animate-float" style={{ animationDelay: "1s" }}>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-emerald-500/30 rounded-xl flex items-center justify-center">
-                  <span className="text-xl">✅</span>
-                </div>
-                <div>
-                  <p className="text-white font-bold text-sm">Akreditasi Nasional</p>
-                  <p className="text-blue-200 text-xs">Berstandar KARS</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white/15 backdrop-blur-md border border-white/20 rounded-2xl p-5 w-72 animate-float" style={{ animationDelay: "2s" }}>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-yellow-500/30 rounded-xl flex items-center justify-center">
-                  <span className="text-xl">⭐</span>
-                </div>
-                <div>
-                  <p className="text-white font-bold text-sm">Rating Pasien</p>
-                  <p className="text-blue-200 text-xs">Berdasarkan 2,400+ ulasan</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-1 mt-2">
-                {"★★★★★".split("").map((s, i) => (
-                  <span key={i} className="text-yellow-400 text-lg">{s}</span>
+              <div className="my-8 h-px bg-slate-200" />
+              <div className="space-y-5">
+                {[
+                  { label: "Janji Temu", title: "Dr. Siti Rahayu – Jantung", status: "Hari Ini", tone: "bg-blue-50 text-[#174a7e]" },
+                  { label: "Hasil Laboratorium", title: "Pemeriksaan Darah Lengkap", status: "Siap", tone: "bg-emerald-50 text-emerald-700" },
+                  { label: "Konsultasi Online", title: "Dr. Ahmad Fauzi – Umum", status: "15 mnt", tone: "bg-orange-50 text-orange-600" },
+                ].map((item) => (
+                  <div key={item.label} className="flex items-center justify-between rounded-2xl bg-slate-50 p-5">
+                    <div className="flex items-center gap-4">
+                      <div className={`flex h-12 w-12 items-center justify-center rounded-xl ${item.tone}`}>
+                        <span className="h-4 w-4 rounded-sm bg-current" />
+                      </div>
+                      <div>
+                        <p className="text-base font-semibold text-slate-500">{item.label}</p>
+                        <p className="mt-1 text-lg font-black text-[#1a1a2e]">{item.title}</p>
+                      </div>
+                    </div>
+                    <span className={`rounded-full px-4 py-2 text-sm font-black ${item.tone}`}>{item.status}</span>
+                  </div>
                 ))}
-                <span className="text-white font-bold ml-1">4.9</span>
+              </div>
+            </div>
+
+            <div className="absolute right-0 top-8 rounded-3xl bg-white p-5 shadow-2xl shadow-blue-950/20">
+              <div className="flex items-center gap-4">
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-50 text-emerald-600">
+                  <span className="h-4 w-4 rounded-full bg-current" />
+                </div>
+                <div>
+                  <p className="text-2xl font-black text-[#1a1a2e]">98.6%</p>
+                  <p className="text-base font-semibold text-slate-500">Tingkat Kepuasan</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="absolute bottom-2 left-12 rounded-3xl bg-white p-5 shadow-2xl shadow-blue-950/20">
+              <div className="flex items-center gap-4">
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-50 text-[#174a7e]">
+                  <span className="h-4 w-4 rounded-full bg-current" />
+                </div>
+                <div>
+                  <p className="text-2xl font-black text-[#1a1a2e]">24/7</p>
+                  <p className="text-base font-semibold text-slate-500">IGD Aktif</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Wave bottom */}
-      <div className="absolute bottom-0 left-0 right-0">
-        <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0 30C240 60 480 0 720 30C960 60 1200 0 1440 30V60H0V30Z" fill="white"/>
-        </svg>
       </div>
     </section>
   );

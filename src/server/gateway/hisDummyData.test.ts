@@ -5,6 +5,7 @@ import {
   getMasterDataSnapshot,
   getModuleShortcuts,
   getPatientRegistry,
+  getRegistrationQueueSnapshot,
   validateDummyAdminLogin,
 } from "./hisDummyData";
 
@@ -46,5 +47,15 @@ test("module shortcuts include every phase review target", () => {
 
   assert.equal(shortcuts.length, 19);
   assert.ok(shortcuts.some((shortcut) => shortcut.href === "/admin/master-data"));
-  assert.ok(shortcuts.some((shortcut) => shortcut.href === "/admin/modules?module=surgery"));
+  assert.ok(shortcuts.some((shortcut) => shortcut.href === "/admin/registration"));
+  assert.ok(shortcuts.some((shortcut) => shortcut.href === "/admin/queue"));
+});
+
+test("registration and queue dummy snapshot exposes next FE phase", () => {
+  const snapshot = getRegistrationQueueSnapshot();
+
+  assert.equal(snapshot.registrations.length, 4);
+  assert.equal(snapshot.queueCounters.waiting, 9);
+  assert.equal(snapshot.queueCounters.serving, 5);
+  assert.equal(snapshot.queueDisplays.length, 4);
 });
