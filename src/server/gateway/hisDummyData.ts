@@ -66,6 +66,17 @@ type QueueDisplay = {
   color: string;
 };
 
+type AdminDoctor = {
+  id: string;
+  name: string;
+  speciality: string;
+  department: { name: string };
+  experience: number;
+  rating: number;
+  isAvailable: boolean;
+  appointmentCount: number;
+};
+
 const publicDepartments = [
   { id: "dept-cardio", name: "Kardiologi", slug: "kardiologi", description: "Layanan jantung terpadu dengan dokter spesialis berpengalaman.", icon: "❤️", color: "#ef4444", isActive: true },
   { id: "dept-neuro", name: "Neurologi", slug: "neurologi", description: "Diagnosis dan terapi gangguan saraf pusat maupun tepi.", icon: "🧠", color: "#8b5cf6", isActive: true },
@@ -81,6 +92,16 @@ const publicDoctors = [
   { id: "doc-sekar", name: "Dr. Sekar Anindya", specialty: "Sp.Rad", photo: null, isAvailable: true, departmentId: "dept-rad", department: publicDepartments[3] },
   { id: "doc-reno", name: "Dr. Reno Saputra", specialty: "Sp.PK", photo: null, isAvailable: true, departmentId: "dept-lab", department: publicDepartments[2] },
 ];
+
+const adminDoctors: AdminDoctor[] = [
+  { id: "doc-siti", name: "Dr. Siti Rahayu", speciality: "Sp.JP", department: { name: "Kardiologi" }, experience: 12, rating: 4.9, isAvailable: true, appointmentCount: 38 },
+  { id: "doc-ahmad", name: "Dr. Ahmad Fauzi", speciality: "Dokter Umum", department: { name: "IGD 24 Jam" }, experience: 8, rating: 4.8, isAvailable: true, appointmentCount: 44 },
+  { id: "doc-sekar", name: "Dr. Sekar Anindya", speciality: "Sp.Rad", department: { name: "Radiologi" }, experience: 10, rating: 4.9, isAvailable: true, appointmentCount: 21 },
+  { id: "doc-reno", name: "Dr. Reno Saputra", speciality: "Sp.PK", department: { name: "Laboratorium" }, experience: 9, rating: 4.7, isAvailable: true, appointmentCount: 27 },
+  { id: "doc-damar", name: "dr. Damar Wicaksono", speciality: "Dokter MCU", department: { name: "Medical Check Up" }, experience: 6, rating: 4.6, isAvailable: false, appointmentCount: 16 },
+  { id: "doc-fajar", name: "dr. Fajar Prasetyo", speciality: "Sp.PD", department: { name: "Rawat Inap" }, experience: 14, rating: 4.8, isAvailable: true, appointmentCount: 19 },
+];
+
 
 const publicNews = [
   { id: "news-1", title: "Layanan MCU Korporat Kini Lebih Cepat", slug: "layanan-mcu-korporat", excerpt: "Paket pemeriksaan kesehatan untuk perusahaan dengan alur digital dan hasil terintegrasi.", imageUrl: null, publishedAt: "2026-07-19T08:00:00.000Z", isPublished: true },
@@ -710,6 +731,10 @@ export function getRegistrationQueueSnapshot() {
       verified: registrations.filter((item) => item.status === "Verified").length,
     },
   };
+}
+
+export function getAdminDoctorsSnapshot() {
+  return adminDoctors;
 }
 
 export function getPublicWebsiteFallback() {

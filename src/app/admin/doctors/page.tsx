@@ -1,15 +1,7 @@
-import { prisma } from "@/lib/prisma";
+import { getAdminDoctorsSnapshot } from "@/server/gateway/hisDummyData";
 
-export const dynamic = "force-dynamic";
-
-export default async function DoctorsAdminPage() {
-  const doctors = await prisma.doctor.findMany({
-    orderBy: { name: "asc" },
-    include: {
-      department: true,
-      _count: { select: { appointments: true } },
-    },
-  });
+export default function DoctorsAdminPage() {
+  const doctors = getAdminDoctorsSnapshot();
 
   return (
     <div className="p-6 lg:p-8">
@@ -41,7 +33,7 @@ export default async function DoctorsAdminPage() {
                 <p className="text-gray-400">Rating</p>
               </div>
               <div>
-                <p className="font-bold text-gray-900">{doc._count.appointments}</p>
+                <p className="font-bold text-gray-900">{doc.appointmentCount}</p>
                 <p className="text-gray-400">Janji</p>
               </div>
             </div>

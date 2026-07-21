@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import {
   getFoundationDashboard,
+  getAdminDoctorsSnapshot,
   getMasterDataSnapshot,
   getModuleReviewDetail,
   getModuleReviewDetails,
@@ -77,6 +78,14 @@ test("registration and queue dummy snapshot exposes next FE phase", () => {
   assert.equal(snapshot.queueCounters.waiting, 9);
   assert.equal(snapshot.queueCounters.serving, 5);
   assert.equal(snapshot.queueDisplays.length, 4);
+});
+
+test("admin doctors snapshot renders without database dependency", () => {
+  const doctors = getAdminDoctorsSnapshot();
+
+  assert.equal(doctors.length, 6);
+  assert.ok(doctors.some((doctor) => doctor.department.name === "Medical Check Up"));
+  assert.ok(doctors.every((doctor) => typeof doctor.appointmentCount === "number"));
 });
 
 test("public website fallback keeps homepage sections populated without database", () => {
