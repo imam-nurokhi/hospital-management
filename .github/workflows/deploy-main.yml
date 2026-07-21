@@ -1,0 +1,98 @@
+name: Deploy main to SIMRS
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: simrs-bisadibicarakan-main
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    name: Test, lint, and build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: "25"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci --legacy-peer-deps
+
+      - name: Run tests
+        run: npm test
+
+      - name: Run lint
+        run: npm run lint
+
+      - name: Build application
+        run: npm run build
+
+  deploy:
+    name: Deploy to VPS
+    runs-on: ubuntu-latest
+    needs: verify
+    environment: production
+    steps:
+      - name: Deploy over SSH
+        uses: appleboy/ssh-action@v1.2.4
+        with:
+          host: ${{ secrets.SIMRS_VPS_HOST }}
+          username: ${{ secrets.SIMRS_VPS_USER }}
+          password: ${{ secrets.SIMRS_VPS_PASSWORD }}
+          key: ${{ secrets.SIMRS_VPS_SSH_KEY }}
+          port: ${{ secrets.SIMRS_VPS_PORT || '22' }}
+          script_stop: true
+          script: |
+            set -eu
+
+            APP_DIR="/opt/simrs-bisadibicarakan"
+            REPO_URL="https://github.com/imam-nurokhi/hospital-management.git"
+            DOMAIN="simrs.bisadibicarakan.com"
+            APP_PORT="3009"
+
+            mkdir -p "$APP_DIR"
+            cd "$APP_DIR"
+
+            if [ -d .git ]; then
+              git fetch origin main
+              git checkout main
+              git reset --hard origin/main
+            else
+              git clone --depth=1 --branch main "$REPO_URL" .
+            fi
+
+            docker compose -f deploy/docker-compose.simrs.yml up -d --build --remove-orphans
+
+            if command -v nginx >/dev/null 2>&1; then
+              cp deploy/nginx.simrs.bisadibicarakan.com.conf "/etc/nginx/conf.d/$DOMAIN.conf"
+              nginx -t
+              if command -v systemctl >/dev/null 2>&1; then
+                systemctl reload nginx
+              else
+                nginx -s reload
+              fi
+            fi
+
+            if command -v certbot >/dev/null 2>&1 && command -v nginx >/dev/null 2>&1; then
+              certbot --nginx -d "$DOMAIN" --non-interactive --agree-tos -m "admin@bisadibicarakan.com" --redirect || true
+            fi
+
+            for attempt in $(seq 1 20); do
+              if curl -fsS "http://127.0.0.1:$APP_PORT/" >/dev/null; then
+                docker ps --filter "name=simrs-bisadibicarakan-web"
+                exit 0
+              fi
+              sleep 3
+            done
+
+            docker logs --tail=120 simrs-bisadibicarakan-web
+            exit 1
