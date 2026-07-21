@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getFoundationDashboard } from "@/server/gateway/hisDummyData";
+import { getFoundationDashboard, getModuleShortcuts } from "@/server/gateway/hisDummyData";
 
 const statusClass = {
   Ready: "border-emerald-200 bg-emerald-50 text-emerald-700",
@@ -9,6 +9,7 @@ const statusClass = {
 
 export default function AdminDashboard() {
   const dashboard = getFoundationDashboard();
+  const shortcuts = getModuleShortcuts();
   const metrics = [
     { label: "User aktif", value: dashboard.metrics.activeUsers, note: "dummy identity-service", tone: "border-teal-500" },
     { label: "Role siap", value: dashboard.metrics.rolesConfigured, note: "permission guard baseline", tone: "border-indigo-500" },
@@ -32,6 +33,7 @@ export default function AdminDashboard() {
             <Link className="rounded-md bg-[#0b4f8a] px-3 py-2 text-sm font-bold text-white hover:bg-[#1a7cc7]" href="/admin/identity">Identity</Link>
             <Link className="rounded-md border border-slate-200 px-3 py-2 text-sm font-bold text-slate-700 hover:bg-slate-50" href="/admin/master-data">Master data</Link>
             <Link className="rounded-md border border-slate-200 px-3 py-2 text-sm font-bold text-slate-700 hover:bg-slate-50" href="/admin/patients">Patient registry</Link>
+            <Link className="rounded-md border border-slate-200 px-3 py-2 text-sm font-bold text-slate-700 hover:bg-slate-50" href="/admin/modules">Semua modul</Link>
           </div>
         </div>
       </section>
@@ -60,6 +62,20 @@ export default function AdminDashboard() {
               <p className="text-sm font-semibold text-slate-600">{item.owner}</p>
               <span className={`w-fit rounded-full border px-3 py-1 text-xs font-bold ${statusClass[item.status]}`}>{item.status}</span>
             </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="mt-8 rounded-lg border border-slate-200 bg-white shadow-sm">
+        <div className="border-b border-slate-100 p-5">
+          <h2 className="text-lg font-black text-slate-950">Shortcut review modul</h2>
+        </div>
+        <div className="grid gap-px bg-slate-100 sm:grid-cols-2 xl:grid-cols-4">
+          {shortcuts.map((shortcut) => (
+            <Link key={shortcut.href} href={shortcut.href} className="bg-white p-4 hover:bg-slate-50">
+              <p className="font-bold text-slate-900">{shortcut.label}</p>
+              <p className="mt-1 text-xs text-slate-500">{shortcut.group} · {shortcut.status}</p>
+            </Link>
           ))}
         </div>
       </section>

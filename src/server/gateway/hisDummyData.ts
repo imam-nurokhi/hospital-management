@@ -48,6 +48,42 @@ type Patient = {
   tags: string[];
 };
 
+export type ModuleShortcut = {
+  href: string;
+  label: string;
+  group: string;
+  status: "Ready" | "Preview" | "Planned";
+  description: string;
+};
+
+const dummyAdmin = {
+  id: "demo-admin",
+  name: "Admin Review",
+  email: "admin@rssehatmedika.com",
+};
+
+const moduleShortcuts: ModuleShortcut[] = [
+  { href: "/admin", label: "Dashboard", group: "Foundation", status: "Ready", description: "Phase 1 command center." },
+  { href: "/admin/identity", label: "Identity", group: "Foundation", status: "Ready", description: "Users, roles, permissions." },
+  { href: "/admin/master-data", label: "Master Data", group: "Foundation", status: "Ready", description: "Service units and catalog." },
+  { href: "/admin/patients", label: "Patient Registry", group: "Foundation", status: "Ready", description: "Dummy duplicate checker." },
+  { href: "/admin/appointments", label: "Appointments", group: "Phase 2", status: "Preview", description: "Existing appointment management." },
+  { href: "/admin/modules?module=registration", label: "Registration", group: "Phase 2", status: "Planned", description: "Front-office registration flow." },
+  { href: "/admin/modules?module=queue", label: "Queue", group: "Phase 2", status: "Planned", description: "Queue dashboard and display." },
+  { href: "/admin/modules?module=mcu", label: "MCU", group: "Phase 3", status: "Planned", description: "Packages, registration, cases, station board." },
+  { href: "/admin/modules?module=clinical", label: "Clinical EMR", group: "Phase 4", status: "Planned", description: "Nurse station, doctor worklist, EMR timeline." },
+  { href: "/admin/modules?module=laboratory", label: "Laboratory", group: "Phase 4", status: "Planned", description: "Worklist, result entry, verification." },
+  { href: "/admin/modules?module=radiology", label: "Radiology", group: "Phase 4", status: "Planned", description: "Radiology worklist and result entry." },
+  { href: "/admin/modules?module=mcu-review", label: "MCU Final Review", group: "Phase 5", status: "Planned", description: "Doctor review, report preview, release." },
+  { href: "/admin/modules?module=billing", label: "Billing", group: "Phase 6", status: "Planned", description: "Tariffs, invoices, cashier, AR aging." },
+  { href: "/admin/modules?module=back-office", label: "Back Office", group: "Phase 7", status: "Planned", description: "Inventory, assets, employees, reports." },
+  { href: "/admin/modules?module=inpatient", label: "Inpatient", group: "Phase 8", status: "Planned", description: "Admissions, beds, transfer, discharge." },
+  { href: "/admin/modules?module=surgery", label: "Surgery", group: "Phase 8", status: "Planned", description: "OR schedule calendar and display." },
+  { href: "/admin/modules?module=kiosk", label: "Kiosk/APM", group: "Phase 9", status: "Planned", description: "Self check-in preview." },
+  { href: "/admin/doctors", label: "Doctors", group: "Current App", status: "Preview", description: "Existing doctor admin page." },
+  { href: "/admin/messages", label: "Messages", group: "Current App", status: "Preview", description: "Existing contact message page." },
+];
+
 const roles: Role[] = [
   { name: "Super Admin", users: 2, permissions: ["identity:*", "audit:read", "master-data:*"] },
   { name: "Front Office", users: 5, permissions: ["patient:write", "appointment:write", "queue:write"] },
@@ -93,6 +129,18 @@ const patients: Patient[] = [
   { mrn: "RM-2607-0004", name: "Hendra Wijaya", birthDate: "1978-08-30", phone: "0819-7777-3100", lastVisit: "18 Jul 2026", risk: "Butuh verifikasi", tags: ["NIK belum lengkap"] },
   { mrn: "RM-2607-0005", name: "Putri Amelia", birthDate: "2000-12-12", phone: "0856-1100-8842", lastVisit: "17 Jul 2026", risk: "Normal", tags: ["Korporat"] },
 ];
+
+export function validateDummyAdminLogin(email: string, password: string) {
+  if (email.toLowerCase() === dummyAdmin.email && password === "admin123456") {
+    return dummyAdmin;
+  }
+
+  return null;
+}
+
+export function getModuleShortcuts() {
+  return moduleShortcuts;
+}
 
 export function getFoundationDashboard() {
   const activeUsers = users.filter((user) => user.status === "Aktif").length + 15;

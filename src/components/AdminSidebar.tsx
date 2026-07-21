@@ -7,6 +7,7 @@ const navItems = [
   { href: "/admin", label: "Dashboard", icon: "▦", exact: true },
   { href: "/admin/identity", label: "Identity", icon: "◆" },
   { href: "/admin/master-data", label: "Master Data", icon: "▤" },
+  { href: "/admin/modules", label: "Semua Modul", icon: "▧" },
   { href: "/admin/appointments", label: "Janji Temu", icon: "📅" },
   { href: "/admin/patients", label: "Pasien", icon: "👥" },
   { href: "/admin/doctors", label: "Dokter", icon: "👨‍⚕️" },

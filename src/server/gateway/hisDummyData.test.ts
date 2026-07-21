@@ -3,7 +3,9 @@ import test from "node:test";
 import {
   getFoundationDashboard,
   getMasterDataSnapshot,
+  getModuleShortcuts,
   getPatientRegistry,
+  validateDummyAdminLogin,
 } from "./hisDummyData";
 
 test("foundation dashboard exposes phase 1 readiness metrics", () => {
@@ -32,4 +34,17 @@ test("master data snapshot groups service catalog by unit", () => {
   assert.equal(snapshot.units.length, 5);
   assert.equal(snapshot.catalogByUnit.Laboratorium.length, 3);
   assert.equal(snapshot.catalogByUnit["Medical Check Up"].length, 4);
+});
+
+test("dummy admin login accepts review credentials only", () => {
+  assert.equal(validateDummyAdminLogin("admin@rssehatmedika.com", "admin123456")?.name, "Admin Review");
+  assert.equal(validateDummyAdminLogin("admin@rssehatmedika.com", "wrong"), null);
+});
+
+test("module shortcuts include every phase review target", () => {
+  const shortcuts = getModuleShortcuts();
+
+  assert.equal(shortcuts.length, 19);
+  assert.ok(shortcuts.some((shortcut) => shortcut.href === "/admin/master-data"));
+  assert.ok(shortcuts.some((shortcut) => shortcut.href === "/admin/modules?module=surgery"));
 });
